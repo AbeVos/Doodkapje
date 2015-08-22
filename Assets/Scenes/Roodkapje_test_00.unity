@@ -78,7 +78,7 @@ NavMeshSettings:
     serializedVersion: 2
     agentRadius: .400000006
     agentHeight: 1.10000002
-    agentSlope: 30
+    agentSlope: 35
     agentClimb: .200000003
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0

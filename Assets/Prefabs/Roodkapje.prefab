@@ -105,8 +105,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0cade80cdd9af664a9a8a6430b5c74d6, type: 3}
   - {fileID: 8300000, guid: 95c303dd3efb42743bad0371541eb2e9, type: 3}
   - {fileID: 8300000, guid: 3c28d612d75f1694a80bf6e88c33dbe4, type: 3}
-  gibs: []
-  gibPositions: []
+  gibs:
+  - {fileID: 171646, guid: 9d1a7216130b68c4eae6c3c1acfd2a41, type: 2}
+  - {fileID: 171646, guid: fe307ce685aed614ab077929bef46222, type: 2}
+  - {fileID: 171646, guid: 8763602f46a36fd4091648344436baeb, type: 2}
+  gibPositions:
+  - {x: 0, y: .449999988, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!136 &13641338
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -148,6 +154,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: gibs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: gasps.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -166,6 +176,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: whimpers.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gibPositions.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -302,6 +316,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gibs.Array.data[0]
+      value: 
+      objectReference: {fileID: 171646, guid: 9d1a7216130b68c4eae6c3c1acfd2a41, type: 2}
+    - target: {fileID: 0}
+      propertyPath: gibs.Array.data[1]
+      value: 
+      objectReference: {fileID: 171646, guid: fe307ce685aed614ab077929bef46222, type: 2}
+    - target: {fileID: 0}
+      propertyPath: gibs.Array.data[2]
+      value: 
+      objectReference: {fileID: 171646, guid: 8763602f46a36fd4091648344436baeb, type: 2}
+    - target: {fileID: 0}
+      propertyPath: gibPositions.Array.data[0].y
+      value: .449999988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

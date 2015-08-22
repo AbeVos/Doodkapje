@@ -7,6 +7,7 @@ public class Roodkapje : MonoBehaviour
     public AudioClip[] walks;
     public AudioClip[] whimpers;
     public AudioClip[] shrieks;
+    public AudioClip[] gore;
 
     public GameObject[] gibs;
     public Vector3[] gibPositions;
@@ -134,13 +135,22 @@ public class Roodkapje : MonoBehaviour
 
             case RoodkapjeState.Dead:
 
+                GetComponent<Renderer>().enabled = false;
+                GetComponent<Collider>().enabled = false;
+                GetComponent<NavMeshAgent>().enabled = false;
+
+
                 for (int i = 0; i < gibs.Length; i++)
                 {
-                    Instantiate(gibs[i], gibPositions[i], transform.rotation);
+                    GameObject g = (GameObject) Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
+                    g.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 10, 1, ForceMode.Impulse);
                 }
 
                 voice.clip = shrieks[Random.Range(0, shrieks.Length)];
                 voice.Play();
+
+                feet.clip = gore[Random.Range(0, gore.Length)];
+                feet.Play();
 
                 State = RoodkapjeState.Destroy;
 
