@@ -70,11 +70,13 @@ public class Roodkapje : MonoBehaviour
 
         voice = gameObject.AddComponent<AudioSource>();
         voice.playOnAwake = false;
-        voice.pitch = Random.Range(0.85f, 1.15f);
+        voice.pitch = Random.Range(0.85f, 1.25f);
+        voice.spatialBlend = 1;
 
         feet = gameObject.AddComponent<AudioSource>();
         feet.playOnAwake = false;
         feet.pitch = Random.Range(0.85f, 1.15f);
+        feet.spatialBlend = 1;
 
         State = RoodkapjeState.Idle;
 	}

@@ -9,12 +9,17 @@ public class RoodkapjeManager : MonoBehaviour
 
     public GameObject prefab;
 
+    public AudioClip musicCreepy;
+    public AudioClip musicHappy;
+
     private Wolf wolf;
 
     private List<GameObject> inUse;
     private List<GameObject> available;
 
-	void Start ()
+    private float blood;
+
+    void Start ()
     {
         inUse = new List<GameObject>();
         available = new List<GameObject>(10);
@@ -25,7 +30,9 @@ public class RoodkapjeManager : MonoBehaviour
         }
 
         wolf = FindObjectOfType<Wolf>();
-	}
+
+        blood = 100;
+    }
 
     void Update ()
     {
@@ -50,6 +57,18 @@ public class RoodkapjeManager : MonoBehaviour
                 Spawn(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
             }
         }
+
+        blood -= Time.deltaTime / 5;
+
+        if (blood <= 0)
+        {
+            Application.LoadLevel("GameOver");
+        }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(20, 20, 200, 400), "Blood-o-meter: " + blood + "%");
     }
 
     void Spawn(Vector3 pos)
@@ -75,5 +94,12 @@ public class RoodkapjeManager : MonoBehaviour
     void Spawn(float x, float y, float z)
     {
         Spawn(new Vector3(x, y, z));
+    }
+
+    public void AddBlood (float amount)
+    {
+        blood += amount;
+
+        if (blood > 100) blood = 100;
     }
 }
