@@ -19,10 +19,17 @@ public class RoodkapjeManager : MonoBehaviour
     private List<GameObject> available;
 
     private float _blood;
+    private int _kapjes;
 
     public float BloodLevel
     {
-        get { return _blood; }
+        get { return this._blood; }
+    }
+
+    public int Kapjes
+    {
+        set { this._kapjes = value; }
+        get { return _kapjes; }
     }
 
     void Start()
@@ -66,15 +73,26 @@ public class RoodkapjeManager : MonoBehaviour
         }
 
 #endif
-        _blood -= Time.deltaTime / bloodDifficulty;
+        _blood -= Time.deltaTime * bloodDifficulty;
 
         if (_blood <= 0)
         {
+            SaveKapjes();
             Application.LoadLevel("GameOver");
         }
     }
 
-
+    void SaveKapjes()
+    {
+        try
+        {
+            PlayerPrefs.SetInt("Kapjes", _kapjes);
+        }
+        catch (PlayerPrefsException e)
+        {
+            Debug.LogError(e);
+        }
+    }
 
     void OnGUI()
     {
