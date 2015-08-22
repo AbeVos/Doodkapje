@@ -4,7 +4,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
-	[RequireComponent(typeof(Animator))]
+	//[RequireComponent(typeof(Animator))]
 	public class ThirdPersonCharacter : MonoBehaviour
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
@@ -32,7 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void Start()
 		{
-			m_Animator = GetComponent<Animator>();
+			//m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_CapsuleHeight = m_Capsule.height;
@@ -61,7 +61,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// control and velocity handling is different when grounded and airborne:
 			if (m_IsGrounded)
 			{
-				HandleGroundedMovement(crouch, jump);
+				//HandleGroundedMovement(crouch, jump);
 			}
 			else
 			{
@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
-			UpdateAnimator(move);
+	//>>>	//UpdateAnimator(move);
 		}
 
 
@@ -114,7 +114,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
-
+        /*
 		void UpdateAnimator(Vector3 move)
 		{
 			// update the animator parameters
@@ -152,7 +152,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
-
+    */
 		void HandleAirborneMovement()
 		{
 			// apply extra gravity from multiplier:
@@ -162,7 +162,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
 		}
 
-
+        /*
 		void HandleGroundedMovement(bool crouch, bool jump)
 		{
 			// check whether conditions are right to allow a jump:
@@ -174,7 +174,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 				m_GroundCheckDistance = 0.1f;
 			}
-		}
+		}*/
 
 		void ApplyExtraTurnRotation()
 		{
@@ -183,7 +183,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
 
-
+        /*
 		public void OnAnimatorMove()
 		{
 			// we implement this function to override the default root motion.
@@ -196,7 +196,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				v.y = m_Rigidbody.velocity.y;
 				m_Rigidbody.velocity = v;
 			}
-		}
+		}*/
 
 
 		void CheckGroundStatus()
@@ -212,13 +212,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
-				m_Animator.applyRootMotion = true;
+				//m_Animator.applyRootMotion = true;
 			}
 			else
 			{
 				m_IsGrounded = false;
 				m_GroundNormal = Vector3.up;
-				m_Animator.applyRootMotion = false;
+				//m_Animator.applyRootMotion = false;
 			}
 		}
 	}
