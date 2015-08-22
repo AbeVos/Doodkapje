@@ -6,6 +6,7 @@ public class RoodkapjeManager : MonoBehaviour
 {
     public float fleeRadius = 10;
     public float safeRadius = 30;
+    public float bloodDifficulty = 1.5f;
 
     public GameObject prefab;
 
@@ -17,9 +18,21 @@ public class RoodkapjeManager : MonoBehaviour
     private List<GameObject> inUse;
     private List<GameObject> available;
 
-    private float blood;
+    private float _blood;
+    private int _kapjes;
 
-    void Start ()
+    public float BloodLevel
+    {
+        get { return this._blood; }
+    }
+
+    public int Kapjes
+    {
+        set { this._kapjes = value; }
+        get { return _kapjes; }
+    }
+
+    void Start()
     {
         inUse = new List<GameObject>();
         available = new List<GameObject>(10);
@@ -31,10 +44,10 @@ public class RoodkapjeManager : MonoBehaviour
 
         wolf = FindObjectOfType<Wolf>();
 
-        blood = 100;
+        _blood = 100;
     }
 
-    void Update ()
+    void Update()
     {
         for (int i = 0; i < inUse.Count; i++)
         {
@@ -45,6 +58,7 @@ public class RoodkapjeManager : MonoBehaviour
             }
         }
 
+#if UNITY_EDITOR 
         if (Input.GetKey(KeyCode.Space))
         {
             print("In use: " + inUse.Count + ", Available: " + available.Count);
@@ -58,18 +72,32 @@ public class RoodkapjeManager : MonoBehaviour
             }
         }
 
-        blood -= Time.deltaTime / 5;
+#endif
+        _blood -= Time.deltaTime * bloodDifficulty;
 
-        if (blood <= 0)
+        if (_blood <= 0)
+        {
+            SaveKapjes();
+            // zie boven
+        }
+    }
+
+    void SaveKapjes()
+    {
+        try
+        {
+            PlayerPrefs.SetInt("Kapjes", _kapjes);
+        }
+        catch (PlayerPrefsException e)
+        {
+            Debug.LogError(e);
+        }
+        finally
         {
             Application.LoadLevel("GameOver");
         }
     }
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(20, 20, 200, 400), "Blood-o-meter: " + blood + "%");
-    }
 
     void Spawn(Vector3 pos)
     {
@@ -80,7 +108,6 @@ public class RoodkapjeManager : MonoBehaviour
 
             inUse.Add(r);
             available.Remove(r);
-            
         }
         else
         {
@@ -96,10 +123,10 @@ public class RoodkapjeManager : MonoBehaviour
         Spawn(new Vector3(x, y, z));
     }
 
-    public void AddBlood (float amount)
+    public void AddBlood(float amount)
     {
-        blood += amount;
+        _blood += amount;
 
-        if (blood > 100) blood = 100;
+        if (_blood > 100) _blood = 100;
     }
 }
