@@ -134,34 +134,32 @@ public class Roodkapje : MonoBehaviour
                 break;
 
             case RoodkapjeState.Dead:
-
-                GetComponent<Renderer>().enabled = false;
-                GetComponent<Collider>().enabled = false;
-                GetComponent<NavMeshAgent>().enabled = false;
-
-
-                for (int i = 0; i < gibs.Length; i++)
+                if (tState == 0)
                 {
-                    GameObject g = (GameObject) Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
-                    g.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 10, 1, ForceMode.Impulse);
+                    GetComponent<Renderer>().enabled = false;
+                    GetComponent<Collider>().enabled = false;
+                    GetComponent<NavMeshAgent>().enabled = false;
+
+
+                    for (int i = 0; i < gibs.Length; i++)
+                    {
+                        GameObject g = (GameObject)Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
+                        g.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 10, 1, ForceMode.Impulse);
+                    }
+
+                    voice.clip = shrieks[Random.Range(0, shrieks.Length)];
+                    voice.Play();
+
+                    feet.clip = gore[Random.Range(0, gore.Length)];
+                    feet.Play();
                 }
 
-                voice.clip = shrieks[Random.Range(0, shrieks.Length)];
-                voice.Play();
-
-                feet.clip = gore[Random.Range(0, gore.Length)];
-                feet.Play();
-
-                State = RoodkapjeState.Destroy;
+                if (!voice.isPlaying)
+                    State = RoodkapjeState.Destroy;
 
                 break;
 
             case RoodkapjeState.Destroy:
-
-                if (!voice.isPlaying)
-                {
-                    Destroy(gameObject);
-                }
 
                 break;
         }
@@ -182,9 +180,18 @@ public class Roodkapje : MonoBehaviour
      *  Public Functions
      */
 
-    public void Init(RoodkapjeManager manager)
+    public void Init(RoodkapjeManager manager, Vector3 pos, Quaternion rot)
     {
         this.manager = manager;
+
+        GetComponent<Renderer>().enabled = true;
+        GetComponent<Collider>().enabled = true;
+        GetComponent<NavMeshAgent>().enabled = true;
+
+        transform.position = pos;
+        transform.rotation = rot;
+
+        State = RoodkapjeState.Idle;
 
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;

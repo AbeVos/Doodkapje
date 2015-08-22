@@ -9,18 +9,67 @@ public class RoodkapjeManager : MonoBehaviour
 
     public GameObject prefab;
 
+    private Wolf wolf;
+
+    private List<GameObject> inUse;
+    private List<GameObject> available;
+
 	void Start ()
     {
-        for (int i = 0; i < 5; i++)
+        inUse = new List<GameObject>();
+        available = new List<GameObject>(10);
+
+        for (int i = 0; i < 10; i++)
         {
             Spawn(Random.Range(-30, 30), 0, Random.Range(-30, 30));
         }
+
+        wolf = FindObjectOfType<Wolf>();
 	}
+
+    void Update ()
+    {
+        for (int i = 0; i < inUse.Count; i++)
+        {
+            if (inUse[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
+            {
+                available.Add(inUse[i]);
+                inUse.RemoveAt(i);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            print("In use: " + inUse.Count + ", Available: " + available.Count);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Spawn(transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
+            }
+        }
+    }
 
     void Spawn(Vector3 pos)
     {
-        GameObject r = (GameObject) Instantiate(prefab, pos, Quaternion.identity);
-        r.GetComponent<Roodkapje>().Init(this);
+        if (available.Count > 0)
+        {
+            GameObject r = available[available.Count - 1];
+            r.GetComponent<Roodkapje>().Init(this, pos, Quaternion.identity);
+
+            inUse.Add(r);
+            available.Remove(r);
+            
+        }
+        else
+        {
+            GameObject r = Instantiate(prefab);
+            r.GetComponent<Roodkapje>().Init(this, pos, Quaternion.identity);
+
+            inUse.Add(r);
+        }
     }
 
     void Spawn(float x, float y, float z)
