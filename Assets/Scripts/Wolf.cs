@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 [AddComponentMenu("Roodkapje/Wolf")]
-public class Wolf : MonoBehaviour {
+public class Wolf : ThirdPersonCharacter
+{
+    public void PrimaryAtack()
+    {
+        Debug.Log("Primary Atack");
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void SecondaryAtack()
+    {
+        Debug.Log("Secondary Atack");
+    }
 }
