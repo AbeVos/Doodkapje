@@ -342,8 +342,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 805563691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.95678616, y: 2.375, z: -29.1675568}
+  m_LocalRotation: {x: -.232090771, y: .423006296, z: .124733612, w: .866972446}
+  m_LocalPosition: {x: 2.95678616, y: 4.01100016, z: -29.1675568}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1100033007}
@@ -463,8 +463,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179265655}
-  m_LocalRotation: {x: .238774091, y: 0, z: 0, w: .971075177}
-  m_LocalPosition: {x: 0, y: 1.76800001, z: -1.72799969}
+  m_LocalRotation: {x: .258871138, y: 0, z: 0, w: .965911865}
+  m_LocalPosition: {x: 0, y: 2.61999989, z: -2.46000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1698442411}
@@ -480,12 +480,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadd54e4832aeef4b9359f44cbe335cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationRange: {x: 50, y: 40}
-  rotationSpeed: 5
-  dampingTime: .970000029
-  autoZeroVerticalOnMobile: 1
+  rotationRange: {x: 60, y: 35}
+  rotationSpeed: 3
+  dampingTime: .5
+  autoZeroVerticalOnMobile: 0
   autoZeroHorizontalOnMobile: 0
-  relative: 1
+  relative: 0
 --- !u!1 &1265250363
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1698442410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .440867394, y: 1.99870146e-17, z: -9.00135136}
+  m_LocalPosition: {x: .460000008, y: 1.99870146e-17, z: -9.86999989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1265250364}
@@ -942,6 +942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58988a6f29e061b4aae353a0404dec7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 2.5
+  sprintFactor: 5.23000002
+  RotationSpeed: .180000007
 --- !u!114 &1698442413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +984,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &1981361257
 GameObject:

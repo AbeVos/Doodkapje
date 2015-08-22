@@ -1,24 +1,38 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityStandardAssets.Characters.ThirdPerson;
 
-public class WolfUserControls : ThirdPersonUserControl
+[AddComponentMenu("Roodkapje/WolfControlls")]
+public class WolfUserControls : MonoBehaviour
 {
-    protected Wolf m_WolfCharacter;
+    protected Wolf WolfCharacter;
 
     private void Start()
     {
-        m_WolfCharacter = GetComponent<Wolf>();
+        WolfCharacter = GetComponent<Wolf>();
     }
 
-    public override void InputUpdate()
+    private void FixedUpdate()
     {
-        base.InputUpdate();
-        if(Input.GetMouseButtonDown(0))
-        {
-            m_WolfCharacter.PrimaryAtack();
-        }
+        // Vector3 CamRotNew = Camera.main.transform.forward;
+        //  Vector3 CamRotNew = WolfCharacter.transform.forward;
 
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        bool s = Input.GetKey(KeyCode.LeftShift);
+
+        Vector2 dir = new Vector2(h, v);
+        WolfCharacter.move(dir, s);
+        WolfCharacter.Rotate();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            WolfCharacter.PrimaryAtack();
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            WolfCharacter.SecondaryAtack();
+        }
+        // CamRot = CamRotNew;
+        // Debug.Log(Vector3.Angle(CamRotNew, CamRot)); 
     }
 
 }
