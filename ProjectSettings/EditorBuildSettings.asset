@@ -9,8 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/Abe_test_00.unity
-<<<<<<< HEAD
-=======
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
->>>>>>> Bloeddorstigheid
