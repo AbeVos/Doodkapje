@@ -88,11 +88,21 @@ public class Roodkapje : MonoBehaviour
         {
             case RoodkapjeState.Idle:
 
-                if (distance <= fleeRadius)
+                Debug.DrawRay(transform.position, wolfPos - transform.position);
+
+                Ray ray = new Ray(transform.position, wolfPos - transform.position);
+                RaycastHit hit = new RaycastHit();
+
+                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf")
                 {
+
                     State = RoodkapjeState.Startled;
                     
                     voice.PlayOneShot(gasps[Random.Range(0, gasps.Length)], 1.5f);
+                }
+                else if (tState >= Random.Range(2, 4))
+                {
+                    agent.SetDestination(transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5)));
                 }
 
                 break;

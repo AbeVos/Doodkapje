@@ -47,7 +47,7 @@ public class RoodkapjeManager : MonoBehaviour
         {
             for (int i = 0; i < 10; i++)
             {
-                Spawn(transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
+                Spawn(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
             }
         }
     }
