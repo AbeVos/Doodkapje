@@ -9,6 +9,9 @@ public class RoodkapjeManager : MonoBehaviour
 
     public GameObject prefab;
 
+    public AudioClip musicCreepy;
+    public AudioClip musicHappy;
+
     private Wolf wolf;
 
     private List<GameObject> inUse;
@@ -55,7 +58,7 @@ public class RoodkapjeManager : MonoBehaviour
             }
         }
 
-        blood -= Time.deltaTime / 10;
+        blood -= Time.deltaTime / 5;
 
         if (blood <= 0)
         {
