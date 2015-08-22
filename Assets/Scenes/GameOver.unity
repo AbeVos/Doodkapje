@@ -190,6 +190,7 @@ GameObject:
   - 222: {fileID: 130170945}
   - 114: {fileID: 130170944}
   - 95: {fileID: 130170943}
+  - 114: {fileID: 130170947}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -263,6 +264,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -230.25}
   m_SizeDelta: {x: 0, y: 260}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &130170947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130170942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306c913f5d3a51e40a2b8b27eff3d202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1388862958
 GameObject:
   m_ObjectHideFlags: 0

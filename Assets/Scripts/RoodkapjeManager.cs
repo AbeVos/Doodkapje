@@ -78,7 +78,7 @@ public class RoodkapjeManager : MonoBehaviour
         if (_blood <= 0)
         {
             SaveKapjes();
-            Application.LoadLevel("GameOver");
+            // zie boven
         }
     }
 
@@ -92,12 +92,12 @@ public class RoodkapjeManager : MonoBehaviour
         {
             Debug.LogError(e);
         }
+        finally
+        {
+            Application.LoadLevel("GameOver");
+        }
     }
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(20, 20, 200, 400), "Blood-o-meter: " + _blood + "%");
-    }
 
     void Spawn(Vector3 pos)
     {
