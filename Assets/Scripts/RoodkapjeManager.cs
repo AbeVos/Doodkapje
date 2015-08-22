@@ -23,12 +23,23 @@ public class RoodkapjeManager : MonoBehaviour
 
     public float BloodLevel
     {
-        get { return this._blood; }
+        get { return _blood; }
+        set
+        {
+            if (_blood > 100)
+            {
+                _blood = 100;
+            }
+            else
+            {
+                _blood = value;
+            }
+        }
     }
 
     public int Kapjes
     {
-        set { this._kapjes = value; }
+        set { _kapjes = value; }
         get { return _kapjes; }
     }
 
@@ -123,10 +134,4 @@ public class RoodkapjeManager : MonoBehaviour
         Spawn(new Vector3(x, y, z));
     }
 
-    public void AddBlood(float amount)
-    {
-        _blood += amount;
-
-        if (_blood > 100) _blood = 100;
-    }
 }
