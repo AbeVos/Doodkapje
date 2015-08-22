@@ -13,13 +13,8 @@ public class RoodkapjeManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            Spawn(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+            Spawn(Random.Range(-30, 30), 0, Random.Range(-30, 30));
         }
-	}
-	
-	void Update ()
-    {
-	
 	}
 
     void Spawn(Vector3 pos)
