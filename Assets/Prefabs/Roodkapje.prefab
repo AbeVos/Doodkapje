@@ -105,6 +105,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0cade80cdd9af664a9a8a6430b5c74d6, type: 3}
   - {fileID: 8300000, guid: 95c303dd3efb42743bad0371541eb2e9, type: 3}
   - {fileID: 8300000, guid: 3c28d612d75f1694a80bf6e88c33dbe4, type: 3}
+  gore:
+  - {fileID: 8300000, guid: 56e5036c8f54f4a4d8fe4630c3556c4b, type: 3}
+  - {fileID: 8300000, guid: 2b2dc73d51828ce4eb0e25e327860e82, type: 3}
   gibs:
   - {fileID: 171646, guid: 9d1a7216130b68c4eae6c3c1acfd2a41, type: 2}
   - {fileID: 171646, guid: fe307ce685aed614ab077929bef46222, type: 2}
@@ -156,6 +159,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: gibs.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gore.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: gasps.Array.size
@@ -333,6 +340,14 @@ Prefab:
       propertyPath: gibPositions.Array.data[0].y
       value: .449999988
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gore.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 56e5036c8f54f4a4d8fe4630c3556c4b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: gore.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b2dc73d51828ce4eb0e25e327860e82, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117260}
