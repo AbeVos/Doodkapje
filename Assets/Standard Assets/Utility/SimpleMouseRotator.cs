@@ -33,8 +33,7 @@ namespace UnityStandardAssets.Utility
         {
             m_OriginalRotation = transform.localRotation;
         }
-
-
+        
         private void Update()
         {
             // we make initial calculations from the original local rotation

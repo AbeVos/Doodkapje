@@ -11,11 +11,12 @@ public class Wolf : MonoBehaviour
     {
         if (sprint)
         {
-            transform.Translate(direction.x * ((movementSpeed * sprintFactor) / 10), 0, direction.y * ((movementSpeed * sprintFactor) / 10));
+            //transform.Translate(direction.x * ((movementSpeed * sprintFactor) / 10), 0, direction.y * ((movementSpeed * sprintFactor) / 10));
         }
         else
         {
-            transform.Translate(direction.x * (movementSpeed / 10), 0, direction.y * (movementSpeed / 10));
+            //transform.Translate(direction.x * (movementSpeed / 10), 0, direction.y * (movementSpeed / 10));
+            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one;
         }
 
     }
