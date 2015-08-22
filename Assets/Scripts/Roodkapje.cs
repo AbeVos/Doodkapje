@@ -5,7 +5,12 @@ public class Roodkapje : MonoBehaviour
 {
     public AudioClip[] gasps;
     public AudioClip[] walks;
-    public AudioClip[] screams;
+    public AudioClip[] whimpers;
+    public AudioClip[] shrieks;
+    public AudioClip[] gore;
+
+    public GameObject[] gibs;
+    public Vector3[] gibPositions;
 
     private RoodkapjeManager manager;
 
@@ -83,11 +88,21 @@ public class Roodkapje : MonoBehaviour
         {
             case RoodkapjeState.Idle:
 
-                if (distance <= fleeRadius)
+                Debug.DrawRay(transform.position, wolfPos - transform.position);
+
+                Ray ray = new Ray(transform.position, wolfPos - transform.position);
+                RaycastHit hit = new RaycastHit();
+
+                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf")
                 {
+
                     State = RoodkapjeState.Startled;
                     
                     voice.PlayOneShot(gasps[Random.Range(0, gasps.Length)], 1.5f);
+                }
+                else if (tState >= Random.Range(2, 4))
+                {
+                    agent.SetDestination(transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5)));
                 }
 
                 break;
@@ -98,7 +113,7 @@ public class Roodkapje : MonoBehaviour
                 {
                     State = RoodkapjeState.Flee;
 
-                    voice.clip = screams[Random.Range(0, screams.Length)];
+                    voice.clip = whimpers[Random.Range(0, whimpers.Length)];
                     voice.Play();
                 }
 
@@ -115,21 +130,47 @@ public class Roodkapje : MonoBehaviour
                 }
                 if (!voice.isPlaying && tState % 4 < Time.deltaTime)
                 {
-                    voice.clip = screams[Random.Range(0, screams.Length - 1)];
+                    voice.clip = whimpers[Random.Range(0, whimpers.Length)];
                     voice.Play();
                 }
 
                 if (distance >= safeRadius)
                 {
+                    agent.SetDestination(transform.position);
+
                     State = RoodkapjeState.Idle;
                 }
 
                 break;
 
             case RoodkapjeState.Dead:
+                if (tState == 0)
+                {
+                    GetComponent<Renderer>().enabled = false;
+                    GetComponent<Collider>().enabled = false;
+                    GetComponent<NavMeshAgent>().enabled = false;
+
+
+                    for (int i = 0; i < gibs.Length; i++)
+                    {
+                        GameObject g = (GameObject)Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
+                        g.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 10, 1, ForceMode.Impulse);
+                    }
+
+                    voice.clip = shrieks[Random.Range(0, shrieks.Length)];
+                    voice.Play();
+
+                    feet.clip = gore[Random.Range(0, gore.Length)];
+                    feet.Play();
+                }
+
+                if (!voice.isPlaying)
+                    State = RoodkapjeState.Destroy;
+
                 break;
 
             case RoodkapjeState.Destroy:
+
                 break;
         }
 
@@ -138,11 +179,10 @@ public class Roodkapje : MonoBehaviour
 
     void OnCollisionEnter (Collision col)
     {
-        print(true);
-
-        if (col.transform.tag == "Wolf")
+        if (State != RoodkapjeState.Destroy && col.transform.tag == "Wolf")
         {
             print(transform.name + " was mauled.");
+            State = RoodkapjeState.Dead;
         }
     }
 
@@ -150,9 +190,18 @@ public class Roodkapje : MonoBehaviour
      *  Public Functions
      */
 
-    public void Init(RoodkapjeManager manager)
+    public void Init(RoodkapjeManager manager, Vector3 pos, Quaternion rot)
     {
         this.manager = manager;
+
+        GetComponent<Renderer>().enabled = true;
+        GetComponent<Collider>().enabled = true;
+        GetComponent<NavMeshAgent>().enabled = true;
+
+        transform.position = pos;
+        transform.rotation = rot;
+
+        State = RoodkapjeState.Idle;
 
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;
