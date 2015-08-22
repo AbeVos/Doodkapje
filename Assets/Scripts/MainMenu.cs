@@ -11,9 +11,4 @@ public class MainMenu : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel + 1);
         }
     }
-
-    void OnGUI()
-    {
-        GUI.Label(new Rect(Screen.width / 3, Screen.height / 3, Screen.width / 3, Screen.height / 3), "Press Space to Start.");
-    }
 }
