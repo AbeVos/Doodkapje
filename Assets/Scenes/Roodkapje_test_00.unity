@@ -76,15 +76,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .400000006
-    agentHeight: 1
+    agentRadius: .25
+    agentHeight: 1.10000002
     agentSlope: 30
     agentClimb: .200000003
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 1
     minRegionArea: .5
-    cellSize: .13333334
+    cellSize: .0833333358
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: f6656d0f29c909a489f4b68fff96fd62, type: 2}
 --- !u!1 &37394069

@@ -5,7 +5,10 @@ public class Roodkapje : MonoBehaviour
 {
     public AudioClip[] gasps;
     public AudioClip[] walks;
-    public AudioClip[] screams;
+    public AudioClip[] whimpers;
+
+    public GameObject[] gibs;
+    public Vector3[] gibPositions;
 
     private RoodkapjeManager manager;
 
@@ -98,7 +101,7 @@ public class Roodkapje : MonoBehaviour
                 {
                     State = RoodkapjeState.Flee;
 
-                    voice.clip = screams[Random.Range(0, screams.Length)];
+                    voice.clip = whimpers[Random.Range(0, whimpers.Length)];
                     voice.Play();
                 }
 
@@ -115,7 +118,7 @@ public class Roodkapje : MonoBehaviour
                 }
                 if (!voice.isPlaying && tState % 4 < Time.deltaTime)
                 {
-                    voice.clip = screams[Random.Range(0, screams.Length - 1)];
+                    voice.clip = whimpers[Random.Range(0, whimpers.Length - 1)];
                     voice.Play();
                 }
 
@@ -127,9 +130,20 @@ public class Roodkapje : MonoBehaviour
                 break;
 
             case RoodkapjeState.Dead:
+
+                for (int i = 0; i < gibs.Length; i++)
+                {
+                    Instantiate(gibs[i], gibPositions[i], transform.rotation);
+                }
+
+                State = RoodkapjeState.Destroy;
+
                 break;
 
             case RoodkapjeState.Destroy:
+
+                Destroy(gameObject);
+
                 break;
         }
 
@@ -138,11 +152,10 @@ public class Roodkapje : MonoBehaviour
 
     void OnCollisionEnter (Collision col)
     {
-        print(true);
-
         if (col.transform.tag == "Wolf")
         {
             print(transform.name + " was mauled.");
+            State = RoodkapjeState.Dead;
         }
     }
 

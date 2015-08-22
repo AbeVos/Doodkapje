@@ -11,7 +11,7 @@ public class RoodkapjeManager : MonoBehaviour
 
 	void Start ()
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 5; i++)
         {
             Spawn(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         }
