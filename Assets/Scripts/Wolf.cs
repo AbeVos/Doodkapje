@@ -33,13 +33,13 @@ public class Wolf : MonoBehaviour
         //Camera.main.transform.Rotate(0, -rotYaw, 0);
     }
 
-    public void PrimaryAtack()
+    public void PrimaryAttack()
     {
-        Debug.Log("Primary Atack");
+        Debug.Log("Primary Attack");
     }
 
-    public void SecondaryAtack()
+    public void SecondaryAttack()
     {
-        Debug.Log("Secondary Atack");
+        Debug.Log("Secondary Attack");
     }
 }

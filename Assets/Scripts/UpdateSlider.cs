@@ -4,15 +4,15 @@ using UnityEngine.UI;
 public class UpdateSlider : MonoBehaviour
 {
     public RoodkapjeManager rm;
-    private Slider sl;
+    private Image im;
 
     void Start()
     {
-        sl = GetComponent<Slider>();
+        im = GetComponent<Image>();
     }
 
     void Update()
     {
-        sl.value = rm.BloodLevel;
+        im.fillAmount = rm.BloodLevel/100;
     }
 }

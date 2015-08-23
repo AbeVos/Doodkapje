@@ -5,7 +5,7 @@ using System.Collections;
 public class BloodPickup : MonoBehaviour
 {
     private RoodkapjeManager manager;
-
+    public int BloodReward = 5;
     private float timer;
 
     void Start ()
@@ -22,7 +22,7 @@ public class BloodPickup : MonoBehaviour
     {
         if (timer >= 1 && col.transform.tag == "Wolf")
         {
-            manager.AddBlood(2);
+            manager.BloodLevel += BloodReward;
 
             Destroy(gameObject);
         }
