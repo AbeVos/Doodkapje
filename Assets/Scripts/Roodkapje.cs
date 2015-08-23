@@ -86,18 +86,17 @@ public class Roodkapje : MonoBehaviour
         wolfPos = wolf.transform.position;
         distance = Vector3.Distance(wolfPos, transform.position);
 
+        if (distance > 30) return;
+
         switch (State)
         {
             case RoodkapjeState.Idle:
 
-                Debug.DrawRay(transform.position, wolfPos - transform.position);
-
                 Ray ray = new Ray(transform.position, wolfPos - transform.position);
                 RaycastHit hit = new RaycastHit();
 
-                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf")
+                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
                 {
-
                     State = RoodkapjeState.Startled;
                     
                     voice.PlayOneShot(gasps[Random.Range(0, gasps.Length)], 1.5f);
@@ -125,17 +124,6 @@ public class Roodkapje : MonoBehaviour
 
                 agent.SetDestination(transform.position + (transform.position - wolfPos) / distance * safeRadius);
 
-                if (!feet.isPlaying)
-                {
-                    feet.clip = walks[Random.Range(0, walks.Length)];
-                    feet.Play();
-                }
-                if (!voice.isPlaying && tState % 4 < Time.deltaTime)
-                {
-                    voice.clip = whimpers[Random.Range(0, whimpers.Length)];
-                    voice.Play();
-                }
-
                 if (distance >= safeRadius)
                 {
                     agent.SetDestination(transform.position);
@@ -143,12 +131,24 @@ public class Roodkapje : MonoBehaviour
                     State = RoodkapjeState.Idle;
                 }
 
+                if (!feet.isPlaying)
+                {
+                    feet.clip = walks[Random.Range(0, walks.Length)];
+                    feet.Play();
+                }
+
+                if (!voice.isPlaying && tState % 4 < Time.deltaTime)
+                {
+                    voice.clip = whimpers[Random.Range(0, whimpers.Length)];
+                    voice.Play();
+                }
+
                 break;
 
             case RoodkapjeState.Dead:
                 if (tState == 0)
                 {
-                    GetComponent<Renderer>().enabled = false;
+                    GetComponentInChildren<Renderer>().enabled = false;
                     GetComponent<Collider>().enabled = false;
                     GetComponent<NavMeshAgent>().enabled = false;
 
@@ -197,7 +197,7 @@ public class Roodkapje : MonoBehaviour
     {
         this.manager = manager;
 
-        GetComponent<Renderer>().enabled = true;
+        GetComponentInChildren<Renderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
         GetComponent<NavMeshAgent>().enabled = true;
 
