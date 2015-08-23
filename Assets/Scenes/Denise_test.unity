@@ -333,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeRadius: 10
   safeRadius: 30
+  bloodDifficulty: 1.5
   prefab: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
   musicCreepy: {fileID: 8300000, guid: e77beac9e1613f54b89ef6505246004f, type: 3}
   musicHappy: {fileID: 8300000, guid: f4486896dbd62924b9b7af02a867d126, type: 3}
