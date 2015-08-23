@@ -22,15 +22,10 @@ public class Wolf : MonoBehaviour
 
     public void Rotate()
     {
-        float yaw = Camera.main.transform.localEulerAngles.y;
-        if (yaw > 300)
-        {
-            yaw -= 360;
-        }
+        float yaw = Camera.main.transform.eulerAngles.y;
 
-        float rotYaw = RotationSpeed * yaw;
-        transform.Rotate(0, rotYaw, 0);
-        //Camera.main.transform.Rotate(0, -rotYaw, 0);
+        float angle = Mathf.LerpAngle(transform.localEulerAngles.y, yaw, 0.1f);
+        transform.localEulerAngles = transform.up * angle;
     }
 
     public void PrimaryAttack()
