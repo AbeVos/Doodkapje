@@ -5,10 +5,13 @@ public class MouseRotate : MonoBehaviour
 	void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 	}
 	
 	void Update ()
     {
+        if (Input.GetMouseButton(0)) { Start(); }
+
         transform.localEulerAngles += Vector3.up * Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
 
         float angle = transform.localEulerAngles.y;
@@ -24,6 +27,6 @@ public class MouseRotate : MonoBehaviour
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, angle, transform.localEulerAngles.z);
 
-        print(transform.localEulerAngles.y);
+       // print(transform.localEulerAngles.y);
 	}
 }
