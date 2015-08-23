@@ -11,26 +11,21 @@ public class Wolf : MonoBehaviour
     {
         if (sprint)
         {
-            GetComponent<Rigidbody>().velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one;
+            GetComponent<Rigidbody>().velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one;
+            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
 
     }
 
     public void Rotate()
     {
-        float yaw = Camera.main.transform.localEulerAngles.y;
-        if (yaw > 300)
-        {
-            yaw -= 360;
-        }
+        float yaw = Camera.main.transform.eulerAngles.y;
 
-        float rotYaw = RotationSpeed * yaw;
-        transform.Rotate(0, rotYaw, 0);
-        //Camera.main.transform.Rotate(0, -rotYaw, 0);
+        float angle = Mathf.LerpAngle(transform.localEulerAngles.y, yaw, 0.1f);
+        transform.localEulerAngles = transform.up * angle;
     }
 
     public void PrimaryAttack()
