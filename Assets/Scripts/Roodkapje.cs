@@ -94,13 +94,13 @@ public class Roodkapje : MonoBehaviour
         wolfPos = wolf.transform.position;
         _distance = Vector3.Distance(wolfPos, transform.position);
 
-        if (_distance > 30) return;
+        if (_distance > manager.safeRadius) return;
 
         switch (State)
         {
             case RoodkapjeState.Idle:
 
-                Ray ray = new Ray(transform.position, wolfPos - transform.position);
+                Ray ray = new Ray(transform.position + Vector3.up * 0.5f, wolfPos - transform.position + Vector3.up * 0.5f);
                 RaycastHit hit = new RaycastHit();
 
                 if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
