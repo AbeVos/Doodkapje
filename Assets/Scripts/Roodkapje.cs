@@ -12,6 +12,8 @@ public class Roodkapje : MonoBehaviour
     public GameObject[] gibs;
     public Vector3[] gibPositions;
 
+    public GameObject roodKwakje;
+
     private RoodkapjeManager manager;
 
     private float fleeRadius;
@@ -173,6 +175,9 @@ public class Roodkapje : MonoBehaviour
 
                     feet.clip = gore[Random.Range(0, gore.Length)];
                     feet.Play();
+
+                    Instantiate(roodKwakje, transform.position, Quaternion.identity);   //  Want mathijs wilde meer impact voor een ontploffende roodkap
+
                 }
 
                 if (!voice.isPlaying)
