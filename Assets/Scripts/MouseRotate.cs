@@ -2,31 +2,24 @@
 
 public class MouseRotate : MonoBehaviour
 {
-	void Start ()
+    private float angle;
+
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-	}
-	
-	void Update ()
+
+        angle = 0;
+    }
+
+    void Update()
     {
-        if (Input.GetMouseButton(0)) { Start(); }
+        angle += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
 
-        transform.localEulerAngles += Vector3.up * Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
-
-        float angle = transform.localEulerAngles.y;
-
-        if (angle < 180)
-        {
-            angle = Mathf.Clamp(angle, 0, 40);
-        }
-        else
-        {
-            angle = Mathf.Clamp(angle, 320, 360);
-        }
+        angle = Mathf.Clamp(angle, -40, 40);
+        angle = Mathf.Lerp(angle, 0, 0.01f);
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, angle, transform.localEulerAngles.z);
 
-       // print(transform.localEulerAngles.y);
-	}
+        print(transform.localEulerAngles.y);
+    }
 }
