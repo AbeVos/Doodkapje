@@ -11,11 +11,11 @@ public class Wolf : MonoBehaviour
     {
         if (sprint)
         {
-            GetComponent<Rigidbody>().velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one;
+            GetComponent<Rigidbody>().velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one;
+            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
 
     }
