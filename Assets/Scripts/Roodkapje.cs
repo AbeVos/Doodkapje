@@ -20,7 +20,15 @@ public class Roodkapje : MonoBehaviour
 
     private Wolf wolf;
     private Vector3 wolfPos;
-    private float distance;
+    private float _distance;
+
+    public float Distance
+    {
+        get
+        {
+            return _distance;
+        }
+    }
 
     private NavMeshAgent agent;
     private Vector3 destination;
@@ -84,9 +92,9 @@ public class Roodkapje : MonoBehaviour
 	void Update ()
     {
         wolfPos = wolf.transform.position;
-        distance = Vector3.Distance(wolfPos, transform.position);
+        _distance = Vector3.Distance(wolfPos, transform.position);
 
-        if (distance > 30) return;
+        if (_distance > 30) return;
 
         switch (State)
         {
@@ -95,7 +103,7 @@ public class Roodkapje : MonoBehaviour
                 Ray ray = new Ray(transform.position, wolfPos - transform.position);
                 RaycastHit hit = new RaycastHit();
 
-                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
+                if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
                 {
                     State = RoodkapjeState.Startled;
                     
@@ -122,9 +130,9 @@ public class Roodkapje : MonoBehaviour
 
             case RoodkapjeState.Flee:
 
-                agent.SetDestination(transform.position + (transform.position - wolfPos) / distance * safeRadius);
+                agent.SetDestination(transform.position + (transform.position - wolfPos) / _distance * safeRadius);
 
-                if (distance >= safeRadius)
+                if (_distance >= safeRadius)
                 {
                     agent.SetDestination(transform.position);
 
@@ -209,5 +217,10 @@ public class Roodkapje : MonoBehaviour
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;
         startleTime = Random.Range(0.25f, 0.5f);
+    }
+
+    public void SetRunningSpeed (float speed)
+    {
+        agent.speed = speed;
     }
 }
