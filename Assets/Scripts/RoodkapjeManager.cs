@@ -68,10 +68,11 @@ public class RoodkapjeManager : MonoBehaviour
 
     void Update()
     {
-        bool roodkaploos = true;
+        bool roodkaploos = true;    //  Blijft true zolang er geen Roodkappen in de buurt zijn
 
         for (int i = 0; i < inUse.Count; i++)   //  Clean inUse List
         {
+            //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Roodkapjes, wat een leuke aangelegenheid
             inUse[i].GetComponent<Roodkapje>().SetRunningSpeed(Kapjes / 15 + 5);
 
             if (inUse[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
