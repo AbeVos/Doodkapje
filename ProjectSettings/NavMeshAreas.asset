@@ -13,8 +13,8 @@ NavMeshAreas:
     cost: 2
   - name: 
     cost: 1
-  - name: 
-    cost: 1
+  - name: Path
+    cost: 4
   - name: 
     cost: 1
   - name: 
