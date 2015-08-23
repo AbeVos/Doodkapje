@@ -12,6 +12,8 @@ public class Roodkapje : MonoBehaviour
     public GameObject[] gibs;
     public Vector3[] gibPositions;
 
+    public GameObject roodKwakje;
+
     private RoodkapjeManager manager;
 
     private float fleeRadius;
@@ -94,13 +96,13 @@ public class Roodkapje : MonoBehaviour
         wolfPos = wolf.transform.position;
         _distance = Vector3.Distance(wolfPos, transform.position);
 
-        if (_distance > 30) return;
+        if (_distance > manager.safeRadius) return;
 
         switch (State)
         {
             case RoodkapjeState.Idle:
 
-                Ray ray = new Ray(transform.position, wolfPos - transform.position);
+                Ray ray = new Ray(transform.position + Vector3.up * 0.5f, wolfPos - transform.position + Vector3.up * 0.5f);
                 RaycastHit hit = new RaycastHit();
 
                 if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
@@ -173,6 +175,9 @@ public class Roodkapje : MonoBehaviour
 
                     feet.clip = gore[Random.Range(0, gore.Length)];
                     feet.Play();
+
+                    Instantiate(roodKwakje, transform.position, Quaternion.identity);   //  Want mathijs wilde meer impact voor een ontploffende roodkap
+
                 }
 
                 if (!voice.isPlaying)
