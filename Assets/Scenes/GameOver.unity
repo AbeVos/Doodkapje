@@ -240,7 +240,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Red Riding Hoods were slaughtered
+  m_Text: Dead Riding Hoods
 --- !u!222 &130170945
 CanvasRenderer:
   m_ObjectHideFlags: 0
