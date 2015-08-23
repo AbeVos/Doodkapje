@@ -157,7 +157,7 @@ public class Roodkapje : MonoBehaviour
                     for (int i = 0; i < gibs.Length; i++)
                     {
                         GameObject g = (GameObject)Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
-                        g.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 10, 1, ForceMode.Impulse);
+                        //g.GetComponent<Rigidbody>().AddExplosionForce(1, transform.position, 5, 1, ForceMode.Impulse);
                     }
 
                     voice.clip = shrieks[Random.Range(0, shrieks.Length)];
