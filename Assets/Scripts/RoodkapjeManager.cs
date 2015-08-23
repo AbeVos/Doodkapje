@@ -13,14 +13,14 @@ public class RoodkapjeManager : MonoBehaviour
     public AudioClip musicCreepy;
     public AudioClip musicHappy;
 
+    private AudioSource music;
+
     private Wolf wolf;
 
     private List<GameObject> inUse;
     private List<GameObject> available;
 
     private float _blood;
-    private int _kapjes;
-
     public float BloodLevel
     {
         get { return _blood; }
@@ -37,9 +37,13 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
+    private int _kapjes;
     public int Kapjes
     {
-        set { _kapjes = value; }
+        set
+        {
+            _kapjes = value;
+        }
         get { return _kapjes; }
     }
 
@@ -53,6 +57,10 @@ public class RoodkapjeManager : MonoBehaviour
             Spawn(Random.Range(-30, 30), 0, Random.Range(-30, 30));
         }
 
+        music = gameObject.AddComponent<AudioSource>();
+        music.loop = true;
+        PlayCreepyMusic();
+
         wolf = FindObjectOfType<Wolf>();
 
         _blood = 100;
@@ -60,16 +68,31 @@ public class RoodkapjeManager : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < inUse.Count; i++)
+        bool roodkaploos = true;    //  Blijft true zolang er geen Roodkappen in de buurt zijn
+
+        for (int i = 0; i < inUse.Count; i++)   //  Clean inUse List
         {
+            //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Roodkapjes, wat een leuke aangelegenheid
+            inUse[i].GetComponent<Roodkapje>().SetRunningSpeed(Kapjes / 15 + 5);
+
             if (inUse[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
             {
                 available.Add(inUse[i]);
                 inUse.RemoveAt(i);
             }
+            else if (roodkaploos && inUse[i].GetComponent<Roodkapje>().Distance < safeRadius)
+            {
+                PlayHappyMusic();
+
+                roodkaploos = false;
+            }
         }
 
+        if (roodkaploos) PlayCreepyMusic();
+
 #if UNITY_EDITOR 
+        //  Debug/test info
+
         if (Input.GetKey(KeyCode.Space))
         {
             print("In use: " + inUse.Count + ", Available: " + available.Count);
@@ -82,8 +105,8 @@ public class RoodkapjeManager : MonoBehaviour
                 Spawn(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
             }
         }
-
 #endif
+
         _blood -= Time.deltaTime * bloodDifficulty;
 
         if (_blood <= 0)
@@ -92,6 +115,10 @@ public class RoodkapjeManager : MonoBehaviour
             // zie boven
         }
     }
+
+    /*
+     *  Custom Functions
+     */
 
     void SaveKapjes()
     {
@@ -134,4 +161,23 @@ public class RoodkapjeManager : MonoBehaviour
         Spawn(new Vector3(x, y, z));
     }
 
+    public void PlayHappyMusic()
+    {
+        if (music.clip != musicHappy)
+        {
+            music.Stop();
+            music.clip = musicHappy;
+            music.Play();
+        }
+    }
+
+    public void PlayCreepyMusic()
+    {
+        if (music.clip != musicCreepy)
+        {
+            music.Stop();
+            music.clip = musicCreepy;
+            music.Play();
+        }
+    }
 }

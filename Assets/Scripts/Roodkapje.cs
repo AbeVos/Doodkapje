@@ -20,7 +20,15 @@ public class Roodkapje : MonoBehaviour
 
     private Wolf wolf;
     private Vector3 wolfPos;
-    private float distance;
+    private float _distance;
+
+    public float Distance
+    {
+        get
+        {
+            return _distance;
+        }
+    }
 
     private NavMeshAgent agent;
     private Vector3 destination;
@@ -84,20 +92,19 @@ public class Roodkapje : MonoBehaviour
 	void Update ()
     {
         wolfPos = wolf.transform.position;
-        distance = Vector3.Distance(wolfPos, transform.position);
+        _distance = Vector3.Distance(wolfPos, transform.position);
+
+        if (_distance > 30) return;
 
         switch (State)
         {
             case RoodkapjeState.Idle:
 
-                Debug.DrawRay(transform.position, wolfPos - transform.position);
-
                 Ray ray = new Ray(transform.position, wolfPos - transform.position);
                 RaycastHit hit = new RaycastHit();
 
-                if (distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf")
+                if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
                 {
-
                     State = RoodkapjeState.Startled;
                     
                     voice.PlayOneShot(gasps[Random.Range(0, gasps.Length)], 1.5f);
@@ -123,24 +130,25 @@ public class Roodkapje : MonoBehaviour
 
             case RoodkapjeState.Flee:
 
-                agent.SetDestination(transform.position + (transform.position - wolfPos) / distance * safeRadius);
+                agent.SetDestination(transform.position + (transform.position - wolfPos) / _distance * safeRadius);
+
+                if (_distance >= safeRadius)
+                {
+                    agent.SetDestination(transform.position);
+
+                    State = RoodkapjeState.Idle;
+                }
 
                 if (!feet.isPlaying)
                 {
                     feet.clip = walks[Random.Range(0, walks.Length)];
                     feet.Play();
                 }
+
                 if (!voice.isPlaying && tState % 4 < Time.deltaTime)
                 {
                     voice.clip = whimpers[Random.Range(0, whimpers.Length)];
                     voice.Play();
-                }
-
-                if (distance >= safeRadius)
-                {
-                    agent.SetDestination(transform.position);
-
-                    State = RoodkapjeState.Idle;
                 }
 
                 break;
@@ -148,7 +156,7 @@ public class Roodkapje : MonoBehaviour
             case RoodkapjeState.Dead:
                 if (tState == 0)
                 {
-                    GetComponent<Renderer>().enabled = false;
+                    GetComponentInChildren<Renderer>().enabled = false;
                     GetComponent<Collider>().enabled = false;
                     GetComponent<NavMeshAgent>().enabled = false;
 
@@ -197,7 +205,7 @@ public class Roodkapje : MonoBehaviour
     {
         this.manager = manager;
 
-        GetComponent<Renderer>().enabled = true;
+        GetComponentInChildren<Renderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
         GetComponent<NavMeshAgent>().enabled = true;
 
@@ -209,5 +217,10 @@ public class Roodkapje : MonoBehaviour
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;
         startleTime = Random.Range(0.25f, 0.5f);
+    }
+
+    public void SetRunningSpeed (float speed)
+    {
+        agent.speed = speed;
     }
 }
