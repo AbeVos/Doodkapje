@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: 31d50e409c438f84780fde6e342461ab
+timeCreated: 1440338322
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Base
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint13
+    100010: joint14
+    100012: joint19
+    100014: joint19 1
+    100016: joint25
+    100018: joint25 1
+    100020: joint8
+    100022: joint9
+    100024: kop
+    100026: L_bovenarm
+    100028: L_bovenbeen
+    100030: L_elleboog
+    100032: L_hand
+    100034: L_hiel
+    100036: L_onderbeen
+    100038: L_pols
+    100040: L_schouder
+    100042: L_voet
+    100044: nek
+    100046: R_bovenarm
+    100048: R_bovenbeen
+    100050: R_elleboog
+    100052: R_hand
+    100054: R_hiel
+    100056: R_onderbeen
+    100058: R_pols
+    100060: R_schouder
+    100062: R_voet
+    100064: Root
+    100066: rug1
+    100068: rug2
+    100070: rug3
+    100072: schoft
+    100074: //RootNode
+    400000: Base
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint13
+    400010: joint14
+    400012: joint19
+    400014: joint19 1
+    400016: joint25
+    400018: joint25 1
+    400020: joint8
+    400022: joint9
+    400024: kop
+    400026: L_bovenarm
+    400028: L_bovenbeen
+    400030: L_elleboog
+    400032: L_hand
+    400034: L_hiel
+    400036: L_onderbeen
+    400038: L_pols
+    400040: L_schouder
+    400042: L_voet
+    400044: nek
+    400046: R_bovenarm
+    400048: R_bovenbeen
+    400050: R_elleboog
+    400052: R_hand
+    400054: R_hiel
+    400056: R_onderbeen
+    400058: R_pols
+    400060: R_schouder
+    400062: R_voet
+    400064: Root
+    400066: rug1
+    400068: rug2
+    400070: rug3
+    400072: schoft
+    400074: //RootNode
+    7400000: Idle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: Root
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Base
+        weight: 1
+      - path: Root/Base/joint9
+        weight: 1
+      - path: Root/Base/joint9/joint10
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: Root/Base/L_bovenbeen
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel/L_voet
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel/L_voet/joint19
+        weight: 1
+      - path: Root/Base/R_bovenbeen
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel/R_voet
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel/R_voet/joint19 1
+        weight: 1
+      - path: Root/Base/rug1
+        weight: 1
+      - path: Root/Base/rug1/rug2
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols/L_hand
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols/L_hand/joint25
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek/kop
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek/kop/joint8
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols/R_hand
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols/R_hand/joint25
+          1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Root
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d21e73905667e5244afba34ce6323ad5,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

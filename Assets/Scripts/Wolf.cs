@@ -4,6 +4,15 @@
 public class Wolf : MonoBehaviour
 {
     public float movementSpeed, sprintFactor, RotationSpeed;
+    public Animator anim;
+    private Rigidbody rb;
+
+
+    void Start()
+    {
+       // anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+    }
 
     // protected CapsuleCollider m_Collider;
 
@@ -11,13 +20,14 @@ public class Wolf : MonoBehaviour
     {
         if (sprint)
         {
-            GetComponent<Rigidbody>().velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
+           rb.velocity = sprintFactor * direction.y * 10 * transform.forward + sprintFactor * direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
+            rb.velocity = direction.y * 10 * transform.forward + direction.x * 5 * transform.right + GetComponent<Rigidbody>().velocity.y * Vector3.one / 4;
         }
 
+        anim.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     public void Rotate()
