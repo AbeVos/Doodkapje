@@ -30,6 +30,7 @@ public class Wolf : MonoBehaviour
 
         float rotYaw = RotationSpeed * yaw;
         transform.Rotate(0, rotYaw, 0);
+        //Camera.main.transform.Rotate(0, -rotYaw, 0);
     }
 
     public void PrimaryAttack()
