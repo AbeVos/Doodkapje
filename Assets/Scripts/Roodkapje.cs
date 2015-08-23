@@ -152,6 +152,7 @@ public class Roodkapje : MonoBehaviour
                     GetComponent<Collider>().enabled = false;
                     GetComponent<NavMeshAgent>().enabled = false;
 
+                    manager.Kapjes++; //meerkapjes :)
 
                     for (int i = 0; i < gibs.Length; i++)
                     {

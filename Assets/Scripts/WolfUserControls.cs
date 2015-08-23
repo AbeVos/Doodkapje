@@ -25,11 +25,11 @@ public class WolfUserControls : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            WolfCharacter.PrimaryAtack();
+            WolfCharacter.PrimaryAttack();
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            WolfCharacter.SecondaryAtack();
+            WolfCharacter.SecondaryAttack();
         }
         // CamRot = CamRotNew;
         // Debug.Log(Vector3.Angle(CamRotNew, CamRot)); 
