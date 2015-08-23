@@ -13,14 +13,14 @@ public class RoodkapjeManager : MonoBehaviour
     public AudioClip musicCreepy;
     public AudioClip musicHappy;
 
+    private AudioSource music;
+
     private Wolf wolf;
 
     private List<GameObject> inUse;
     private List<GameObject> available;
 
     private float _blood;
-    private int _kapjes;
-
     public float BloodLevel
     {
         get { return _blood; }
@@ -37,6 +37,7 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
+    private int _kapjes;
     public int Kapjes
     {
         set { _kapjes = value; }
@@ -60,7 +61,7 @@ public class RoodkapjeManager : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < inUse.Count; i++)
+        for (int i = 0; i < inUse.Count; i++)   //  Clean inUse List
         {
             if (inUse[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
             {
@@ -70,6 +71,8 @@ public class RoodkapjeManager : MonoBehaviour
         }
 
 #if UNITY_EDITOR 
+        //  Debug/test info
+
         if (Input.GetKey(KeyCode.Space))
         {
             print("In use: " + inUse.Count + ", Available: " + available.Count);
@@ -82,8 +85,8 @@ public class RoodkapjeManager : MonoBehaviour
                 Spawn(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
             }
         }
-
 #endif
+
         _blood -= Time.deltaTime * bloodDifficulty;
 
         if (_blood <= 0)
@@ -92,6 +95,10 @@ public class RoodkapjeManager : MonoBehaviour
             // zie boven
         }
     }
+
+    /*
+     *  Custom Functions
+     */
 
     void SaveKapjes()
     {
