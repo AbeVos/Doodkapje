@@ -1,86 +1,86 @@
 fileFormatVersion: 2
 guid: f72e2b5d781bc3d4bb5d4526737db51d
-timeCreated: 1440334152
+timeCreated: 1440360233
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Root
-    100002: //RootNode
-    100004: wolf_Base
-    100006: wolf_joint10
-    100008: wolf_joint11
-    100010: wolf_joint12
-    100012: wolf_joint13
-    100014: wolf_joint14
-    100016: wolf_joint19
-    100018: wolf_joint19 1
-    100020: wolf_joint25
-    100022: wolf_joint25 1
-    100024: wolf_joint8
-    100026: wolf_joint9
-    100028: wolf_kop
-    100030: wolf_L_bovenarm
-    100032: wolf_L_bovenbeen
-    100034: wolf_L_elleboog
-    100036: wolf_L_hand
-    100038: wolf_L_hiel
-    100040: wolf_L_onderbeen
-    100042: wolf_L_pols
-    100044: wolf_L_schouder
-    100046: wolf_L_voet
-    100048: wolf_nek
-    100050: wolf_R_bovenarm
-    100052: wolf_R_bovenbeen
-    100054: wolf_R_elleboog
-    100056: wolf_R_hand
-    100058: wolf_R_hiel
-    100060: wolf_R_onderbeen
-    100062: wolf_R_pols
-    100064: wolf_R_schouder
-    100066: wolf_R_voet
-    100068: wolf_rug1
-    100070: wolf_rug2
-    100072: wolf_rug3
-    100074: wolf_schoft
-    400000: Root
-    400002: //RootNode
-    400004: wolf_Base
-    400006: wolf_joint10
-    400008: wolf_joint11
-    400010: wolf_joint12
-    400012: wolf_joint13
-    400014: wolf_joint14
-    400016: wolf_joint19
-    400018: wolf_joint19 1
-    400020: wolf_joint25
-    400022: wolf_joint25 1
-    400024: wolf_joint8
-    400026: wolf_joint9
-    400028: wolf_kop
-    400030: wolf_L_bovenarm
-    400032: wolf_L_bovenbeen
-    400034: wolf_L_elleboog
-    400036: wolf_L_hand
-    400038: wolf_L_hiel
-    400040: wolf_L_onderbeen
-    400042: wolf_L_pols
-    400044: wolf_L_schouder
-    400046: wolf_L_voet
-    400048: wolf_nek
-    400050: wolf_R_bovenarm
-    400052: wolf_R_bovenbeen
-    400054: wolf_R_elleboog
-    400056: wolf_R_hand
-    400058: wolf_R_hiel
-    400060: wolf_R_onderbeen
-    400062: wolf_R_pols
-    400064: wolf_R_schouder
-    400066: wolf_R_voet
-    400068: wolf_rug1
-    400070: wolf_rug2
-    400072: wolf_rug3
-    400074: wolf_schoft
+    100000: Base
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint13
+    100010: joint14
+    100012: joint19
+    100014: joint19 1
+    100016: joint25
+    100018: joint25 1
+    100020: joint8
+    100022: joint9
+    100024: kop
+    100026: L_bovenarm
+    100028: L_bovenbeen
+    100030: L_elleboog
+    100032: L_hand
+    100034: L_hiel
+    100036: L_onderbeen
+    100038: L_pols
+    100040: L_schouder
+    100042: L_voet
+    100044: nek
+    100046: R_bovenarm
+    100048: R_bovenbeen
+    100050: R_elleboog
+    100052: R_hand
+    100054: R_hiel
+    100056: R_onderbeen
+    100058: R_pols
+    100060: R_schouder
+    100062: R_voet
+    100064: Root
+    100066: rug1
+    100068: rug2
+    100070: rug3
+    100072: schoft
+    100074: //RootNode
+    400000: Base
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint13
+    400010: joint14
+    400012: joint19
+    400014: joint19 1
+    400016: joint25
+    400018: joint25 1
+    400020: joint8
+    400022: joint9
+    400024: kop
+    400026: L_bovenarm
+    400028: L_bovenbeen
+    400030: L_elleboog
+    400032: L_hand
+    400034: L_hiel
+    400036: L_onderbeen
+    400038: L_pols
+    400040: L_schouder
+    400042: L_voet
+    400044: nek
+    400046: R_bovenarm
+    400048: R_bovenbeen
+    400050: R_elleboog
+    400052: R_hand
+    400054: R_hiel
+    400056: R_onderbeen
+    400058: R_pols
+    400060: R_schouder
+    400062: R_voet
+    400064: Root
+    400066: rug1
+    400068: rug2
+    400070: rug3
+    400072: schoft
+    400074: //RootNode
     7400000: TailDown
     9500000: //RootNode
   materials:
@@ -102,111 +102,7 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: TailDown
-      takeName: TailDown
-      firstFrame: 33
-      lastFrame: 49
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Root
-        weight: 1
-      - path: Root/wolf_Base
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9/wolf_joint10
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9/wolf_joint10/wolf_joint11
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9/wolf_joint10/wolf_joint11/wolf_joint12
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9/wolf_joint10/wolf_joint11/wolf_joint12/wolf_joint13
-        weight: 1
-      - path: Root/wolf_Base/wolf_joint9/wolf_joint10/wolf_joint11/wolf_joint12/wolf_joint13/wolf_joint14
-        weight: 1
-      - path: Root/wolf_Base/wolf_L_bovenbeen
-        weight: 1
-      - path: Root/wolf_Base/wolf_L_bovenbeen/wolf_L_onderbeen
-        weight: 1
-      - path: Root/wolf_Base/wolf_L_bovenbeen/wolf_L_onderbeen/wolf_L_hiel
-        weight: 1
-      - path: Root/wolf_Base/wolf_L_bovenbeen/wolf_L_onderbeen/wolf_L_hiel/wolf_L_voet
-        weight: 1
-      - path: Root/wolf_Base/wolf_L_bovenbeen/wolf_L_onderbeen/wolf_L_hiel/wolf_L_voet/wolf_joint19
-        weight: 1
-      - path: Root/wolf_Base/wolf_R_bovenbeen
-        weight: 1
-      - path: Root/wolf_Base/wolf_R_bovenbeen/wolf_R_onderbeen
-        weight: 1
-      - path: Root/wolf_Base/wolf_R_bovenbeen/wolf_R_onderbeen/wolf_R_hiel
-        weight: 1
-      - path: Root/wolf_Base/wolf_R_bovenbeen/wolf_R_onderbeen/wolf_R_hiel/wolf_R_voet
-        weight: 1
-      - path: Root/wolf_Base/wolf_R_bovenbeen/wolf_R_onderbeen/wolf_R_hiel/wolf_R_voet/wolf_joint19
-          1
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder/wolf_L_bovenarm
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder/wolf_L_bovenarm/wolf_L_elleboog
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder/wolf_L_bovenarm/wolf_L_elleboog/wolf_L_pols
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder/wolf_L_bovenarm/wolf_L_elleboog/wolf_L_pols/wolf_L_hand
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_L_schouder/wolf_L_bovenarm/wolf_L_elleboog/wolf_L_pols/wolf_L_hand/wolf_joint25
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_nek
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_nek/wolf_kop
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_nek/wolf_kop/wolf_joint8
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder/wolf_R_bovenarm
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder/wolf_R_bovenarm/wolf_R_elleboog
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder/wolf_R_bovenarm/wolf_R_elleboog/wolf_R_pols
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder/wolf_R_bovenarm/wolf_R_elleboog/wolf_R_pols/wolf_R_hand
-        weight: 1
-      - path: Root/wolf_Base/wolf_rug1/wolf_rug2/wolf_rug3/wolf_schoft/wolf_R_schouder/wolf_R_bovenarm/wolf_R_elleboog/wolf_R_pols/wolf_R_hand/wolf_joint25
-          1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -231,7 +127,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
@@ -242,9 +138,8 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: Root
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d21e73905667e5244afba34ce6323ad5,
-    type: 3}
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
   userData: 
