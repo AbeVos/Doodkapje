@@ -57,19 +57,19 @@ public class RoodkapjeManager : MonoBehaviour
         inUseRoodkapje = new List<GameObject>();
         availableRoodkapje = new List<GameObject>(10);
 
-        for (int i = 0; i < 10; i++)
+        /*for (int i = 0; i < 10; i++)
         {
             SpawnRoodkapje(Random.Range(-30, 30), 0, Random.Range(-30, 30));
-        }
+        }*/
 
         //  Sapwn Rabbits
         inUseRabbit = new List<GameObject>();
         availableRabbit = new List<GameObject>(10);
 
-        for (int i = 0; i < 10; i++)
+        /*for (int i = 0; i < 10; i++)
         {
             SpawnRabbit(Random.Range(-30, 30), 0, Random.Range(-30, 30));
-        }
+        }*/
 
         music = gameObject.AddComponent<AudioSource>();
         music.loop = true;
@@ -171,7 +171,7 @@ public class RoodkapjeManager : MonoBehaviour
     }
 
 
-    void SpawnRoodkapje (Vector3 pos)
+    public void SpawnRoodkapje (Vector3 pos)
     {
         if (availableRoodkapje.Count > 0)
         {
@@ -190,12 +190,12 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
-    void SpawnRoodkapje (float x, float y, float z)
+    public void SpawnRoodkapje (float x, float y, float z)
     {
         SpawnRoodkapje(new Vector3(x, y, z));
     }
 
-    void SpawnRabbit (Vector3 pos)
+    public void SpawnRabbit (Vector3 pos)
     {
         if (availableRabbit.Count > 0)
         {
@@ -214,7 +214,7 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
-    void SpawnRabbit (float x, float y, float z)
+    public void SpawnRabbit (float x, float y, float z)
     {
         SpawnRabbit(new Vector3(x, y, z));
     }
