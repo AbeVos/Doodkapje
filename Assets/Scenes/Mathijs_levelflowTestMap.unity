@@ -190,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeRadius: 15
   safeRadius: 30
+  deathRadius: 50
   bloodDifficulty: 1
   roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
   rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
@@ -937,6 +938,18 @@ Prefab:
       propertyPath: rm
       value: 
       objectReference: {fileID: 227135674}
+    - target: {fileID: 110544, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_TagString
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 138848, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481772, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: sc
+      value: 
+      objectReference: {fileID: 1819147837}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
   m_IsPrefabParent: 0
@@ -1014,6 +1027,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &1819147835 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110544, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+  m_PrefabInternal: {fileID: 1777840685}
+--- !u!135 &1819147837
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819147835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1981361257
 GameObject:
   m_ObjectHideFlags: 0

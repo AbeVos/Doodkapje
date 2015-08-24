@@ -30,7 +30,8 @@ public class WolfUserControls : MonoBehaviour
         {
             WolfCharacter.PrimaryAttack();
         }
-        else if (Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButtonDown(1))
         {
             WolfCharacter.SecondaryAttack();
         }
