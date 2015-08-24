@@ -25,7 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489980}
-  - 95: {fileID: 9525164}
+  - 114: {fileID: 11455666}
   m_Layer: 0
   m_Name: BloemRoodkapje
   m_TagString: Untagged
@@ -150,30 +150,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104496}
   m_Mesh: {fileID: 4300002, guid: c259862742e1fb0499686916d5f71e64, type: 3}
---- !u!95 &9525164
-Animator:
-  serializedVersion: 3
+--- !u!114 &11455666
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137610}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c259862742e1fb0499686916d5f71e64, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5902ab626a4653e48afbfc4f900baf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groeiduur: 1.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: groeiduur
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 137610}
