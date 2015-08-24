@@ -93,7 +93,7 @@ public class Wolf : MonoBehaviour
         }
         else
         {
-            rb.velocity = (transform.right * movementSpeed * direction.x) + (transform.forward * movementSpeed * direction.y);
+            rb.velocity = (transform.right * movementSpeed * direction.x) +  (transform.forward * movementSpeed * direction.y);
         }
 
         anim.SetFloat("Velocity", rb.velocity.magnitude);
