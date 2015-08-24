@@ -87,7 +87,7 @@ NavMeshSettings:
     minRegionArea: .5
     cellSize: .13333334
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: 0cdadbe267b9b5b4dbbc49d799f10451, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d61f6ef4df543b64c890067fe58e13e2, type: 2}
 --- !u!1 &37394069
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +191,8 @@ MonoBehaviour:
   fleeRadius: 15
   safeRadius: 30
   bloodDifficulty: 1
-  prefab: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
+  roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
+  rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
   musicCreepy: {fileID: 8300000, guid: e77beac9e1613f54b89ef6505246004f, type: 3}
   musicHappy: {fileID: 8300000, guid: f4486896dbd62924b9b7af02a867d126, type: 3}
 --- !u!4 &227135675
@@ -318,6 +319,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9540664, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433528, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: rm
+      value: 
+      objectReference: {fileID: 227135674}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
   m_IsPrefabParent: 0
