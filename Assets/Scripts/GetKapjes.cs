@@ -7,6 +7,9 @@ public class GetKapjes : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Text tx = GetComponent<Text>();
         string kp = "";
 
