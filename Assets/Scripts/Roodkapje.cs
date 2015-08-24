@@ -19,6 +19,8 @@ public class Roodkapje : MonoBehaviour
 
     private float fleeRadius;
     private float safeRadius;
+    private float deathRadius;
+
     private float startleTime;
 
     private Wolf wolf;
@@ -102,7 +104,8 @@ public class Roodkapje : MonoBehaviour
         wolfPos = wolf.transform.position;
         _distance = Vector3.Distance(wolfPos, transform.position);
 
-        if (_distance > manager.safeRadius) return;
+        if (_distance > safeRadius) return;
+        if (_distance > deathRadius) State = RoodkapjeState.Destroy;
 
         switch (State)
         {
@@ -166,7 +169,8 @@ public class Roodkapje : MonoBehaviour
                 {
                     GetComponentInChildren<Renderer>().enabled = false;
                     GetComponent<Collider>().enabled = false;
-                    GetComponent<NavMeshAgent>().enabled = false;
+                    //GetComponent<NavMeshAgent>().enabled = false;
+                    agent.enabled = false;
 
                     manager.Kapjes++; //meerkapjes :)
 
@@ -220,7 +224,8 @@ public class Roodkapje : MonoBehaviour
 
         GetComponentInChildren<Renderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
-        GetComponent<NavMeshAgent>().enabled = true;
+        agent = GetComponent<NavMeshAgent>();
+        agent.enabled = true;
 
         transform.position = pos;
         transform.rotation = rot;
@@ -229,6 +234,8 @@ public class Roodkapje : MonoBehaviour
 
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;
+        deathRadius = manager.deathRadius;
+
         startleTime = Random.Range(0.25f, 0.5f);
     }
 

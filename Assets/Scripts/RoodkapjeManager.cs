@@ -6,6 +6,7 @@ public class RoodkapjeManager : MonoBehaviour
 {
     public float fleeRadius = 10;
     public float safeRadius = 30;
+    public float deathRadius = 50;
     public float bloodDifficulty = 1.5f;
 
     public GameObject roodkapje;
@@ -55,18 +56,18 @@ public class RoodkapjeManager : MonoBehaviour
     {
         //  Spawn Roodkapjes
         inUseRoodkapje = new List<GameObject>();
-        availableRoodkapje = new List<GameObject>(10);
+        availableRoodkapje = new List<GameObject>();
+
+        //  Sapwn Rabbits
+        inUseRabbit = new List<GameObject>();
+        availableRabbit = new List<GameObject>();
 
         /*for (int i = 0; i < 10; i++)
         {
             SpawnRoodkapje(Random.Range(-30, 30), 0, Random.Range(-30, 30));
-        }*/
-
-        //  Sapwn Rabbits
-        inUseRabbit = new List<GameObject>();
-        availableRabbit = new List<GameObject>(10);
-
-        /*for (int i = 0; i < 10; i++)
+        }
+        
+        for (int i = 0; i < 10; i++)
         {
             SpawnRabbit(Random.Range(-30, 30), 0, Random.Range(-30, 30));
         }*/
