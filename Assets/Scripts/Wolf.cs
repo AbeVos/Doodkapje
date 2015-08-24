@@ -89,14 +89,14 @@ public class Wolf : MonoBehaviour
     {
         if (isSprinting)
         {
-            rb.velocity = (transform.right * movementSpeed * direction.x) + (transform.forward * movementSpeed * sprintFactor * direction.y);
+            rb.velocity = (transform.right * movementSpeed * direction.x) + Physics.gravity +(transform.forward * movementSpeed * sprintFactor * direction.y);
         }
         else
         {
-            rb.velocity = (transform.right * movementSpeed * direction.x) +  (transform.forward * movementSpeed * direction.y);
+            rb.velocity = (transform.right * movementSpeed * direction.x) + Physics.gravity + (transform.forward * movementSpeed * direction.y);
         }
 
-        anim.SetFloat("Velocity", rb.velocity.magnitude);
+        anim.SetFloat("Velocity", rb.velocity.magnitude - 9.81f);
 
     }
 
