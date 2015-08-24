@@ -16,8 +16,8 @@ RenderSettings:
   serializedVersion: 6
   m_Fog: 1
   m_FogColor: {r: .5, g: .5, b: .5, a: 1}
-  m_FogMode: 2
-  m_FogDensity: .200000003
+  m_FogMode: 3
+  m_FogDensity: .150000006
   m_LinearFogStart: 0
   m_LinearFogEnd: 25
   m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
@@ -327,6 +327,42 @@ Prefab:
       propertyPath: rm
       value: 
       objectReference: {fileID: 227135674}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: .501960814
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: .501960814
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: .501960814
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9560200, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 441546, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453296, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: rm
+      value: 
+      objectReference: {fileID: 227135674}
+    - target: {fileID: 11481772, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
   m_IsPrefabParent: 0
@@ -403,6 +439,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1100033007}
   m_RootOrder: 4
+--- !u!1001 &975899248
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 446226, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1100033006
 GameObject:
   m_ObjectHideFlags: 0
