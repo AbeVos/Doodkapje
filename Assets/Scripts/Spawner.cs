@@ -33,12 +33,7 @@ public class Spawner : MonoBehaviour
         Vector3 dir3 = cam.forward.normalized;
         Vector2 dir = new Vector2(dir3.x, dir3.z).normalized;
 
-        Debug.DrawRay(Vector3.zero, dir);
-        Debug.DrawRay(Vector3.zero, pos);
-
         float dot = Vector3.Dot(dir, pos);
-
-        print(pos + ", " + dot);
 	}
 
     void OnDrawGizmos()
