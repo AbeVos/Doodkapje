@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: WatervalFase2Test 12
-  m_Shader: {fileID: 4800000, guid: 81b7b6702f2fe454296686b4e2b51d55, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8fba3a8a4d622d94f98f60027aca5f7e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -20,7 +20,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: a101c8a8b7d21854481972e30af34b7f, type: 3}
-          m_Scale: {x: 5, y: 5}
+          m_Scale: {x: 2, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
