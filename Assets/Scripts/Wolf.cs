@@ -87,11 +87,20 @@ public class Wolf : MonoBehaviour
 
     public void move(Vector2 direction)
     {
-        Debug.DrawRay(transform.position, Vector3.down);
+        Debug.DrawRay(transform.position + Vector3.up * 0.5f, Vector3.down);
 
         Ray ray = new Ray(transform.position + Vector3.up * 0.5f, Vector3.down);
 
-        if (!Physics.Raycast(ray, 1)) return;
+        if (!Physics.Raycast(ray, 1))
+        {
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity += Physics.gravity;
+            }
+            print("Falling");
+            
+            return;
+        }
 
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
 

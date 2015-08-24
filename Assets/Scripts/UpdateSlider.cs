@@ -8,6 +8,7 @@ public class UpdateSlider : MonoBehaviour
 
     void Start()
     {
+        rm = FindObjectOfType<RoodkapjeManager>();
         im = GetComponent<Image>();
     }
 
