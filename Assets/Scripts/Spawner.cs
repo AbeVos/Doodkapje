@@ -9,15 +9,23 @@ public class Spawner : MonoBehaviour
     }
     public Type type;
 
+    public float spawnDistance = 30;
+    public float margin = 5;
+    public float cooldown = 60;
+
+    private float timer;
+
     private RoodkapjeManager manager;
 
-    private Transform cam;
+    private Camera cam;
 
 	void Start ()
     {
+        timer = cooldown;
+
         manager = FindObjectOfType<RoodkapjeManager>();
 
-        cam = Camera.main.transform;
+        cam = Camera.main;
 	}
 	
 	void Update ()
@@ -26,14 +34,35 @@ public class Spawner : MonoBehaviour
          *  Dit is niet moeder's mooiste, oordeel niet :'(
          */
 
-        float distance = Vector3.Distance(cam.position, transform.position);
+        float distance = Vector3.Distance(cam.transform.position, transform.position);
 
-        Vector3 pos3 = - Vector3.Normalize(cam.position - transform.position.normalized);
+        Vector3 pos3 = - Vector3.Normalize(cam.transform.position - transform.position.normalized);
         Vector2 pos = new Vector2(pos3.x, pos3.z).normalized;
-        Vector3 dir3 = cam.forward.normalized;
+        Vector3 dir3 = cam.transform.forward.normalized;
         Vector2 dir = new Vector2(dir3.x, dir3.z).normalized;
 
         float dot = Vector3.Dot(dir, pos);
+
+        if (timer >= cooldown &&
+            distance < spawnDistance + margin &&
+            distance > spawnDistance &&
+            dot >= 0)
+        {
+            Debug.Log("Spawn");
+
+            if (type == Type.Roodkapje)
+            {
+                manager.SpawnRoodkapje(transform.position);
+            }
+            else
+            {
+                manager.SpawnRabbit(transform.position);
+            }
+
+            timer = 0;
+        }
+        else
+            timer += Time.deltaTime;
 	}
 
     void OnDrawGizmos()
@@ -48,7 +77,7 @@ public class Spawner : MonoBehaviour
 
             case Type.Konijn:
 
-                Gizmos.DrawWireSphere(transform.position + Vector3.up / 2, 1 / 2);
+                Gizmos.DrawWireSphere(transform.position + Vector3.up / 2, 0.5f);
 
                 break;
         }

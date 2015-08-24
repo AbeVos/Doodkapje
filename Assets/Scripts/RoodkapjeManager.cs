@@ -6,6 +6,7 @@ public class RoodkapjeManager : MonoBehaviour
 {
     public float fleeRadius = 10;
     public float safeRadius = 30;
+    public float deathRadius = 50;
     public float bloodDifficulty = 1.5f;
 
     public GameObject roodkapje;
@@ -55,25 +56,25 @@ public class RoodkapjeManager : MonoBehaviour
     {
         //  Spawn Roodkapjes
         inUseRoodkapje = new List<GameObject>();
-        availableRoodkapje = new List<GameObject>(10);
-
-        for (int i = 0; i < 10; i++)
-        {
-            SpawnRoodkapje(Random.Range(-30, 30), 0, Random.Range(-30, 30));
-        }
+        availableRoodkapje = new List<GameObject>();
 
         //  Sapwn Rabbits
         inUseRabbit = new List<GameObject>();
-        availableRabbit = new List<GameObject>(10);
+        availableRabbit = new List<GameObject>();
 
+        /*for (int i = 0; i < 10; i++)
+        {
+            SpawnRoodkapje(Random.Range(-30, 30), 0, Random.Range(-30, 30));
+        }
+        
         for (int i = 0; i < 10; i++)
         {
             SpawnRabbit(Random.Range(-30, 30), 0, Random.Range(-30, 30));
-        }
+        }*/
 
         music = gameObject.AddComponent<AudioSource>();
         music.loop = true;
-        PlayCreepyMusic();
+        PlayHappyMusic();
 
         wolf = FindObjectOfType<Wolf>();
 
@@ -86,8 +87,6 @@ public class RoodkapjeManager : MonoBehaviour
          *  Roodkapje
          */
 
-        bool roodkaploos = true;    //  Blijft true zolang er geen Roodkappen in de buurt zijn
-
         for (int i = 0; i < inUseRoodkapje.Count; i++)   //  Update Roodkapje pool
         {
             //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Roodkapjes, wat een leuke aangelegenheid
@@ -98,15 +97,7 @@ public class RoodkapjeManager : MonoBehaviour
                 availableRoodkapje.Add(inUseRoodkapje[i]);
                 inUseRoodkapje.RemoveAt(i);
             }
-            else if (roodkaploos && inUseRoodkapje[i].GetComponent<Roodkapje>().Distance < safeRadius)
-            {
-                PlayHappyMusic();
-
-                roodkaploos = false;
-            }
         }
-
-        if (roodkaploos) PlayCreepyMusic();
 
         /*
          *  Rabbit
@@ -171,7 +162,7 @@ public class RoodkapjeManager : MonoBehaviour
     }
 
 
-    void SpawnRoodkapje (Vector3 pos)
+    public void SpawnRoodkapje (Vector3 pos)
     {
         if (availableRoodkapje.Count > 0)
         {
@@ -190,12 +181,12 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
-    void SpawnRoodkapje (float x, float y, float z)
+    public void SpawnRoodkapje (float x, float y, float z)
     {
         SpawnRoodkapje(new Vector3(x, y, z));
     }
 
-    void SpawnRabbit (Vector3 pos)
+    public void SpawnRabbit (Vector3 pos)
     {
         if (availableRabbit.Count > 0)
         {
@@ -214,7 +205,7 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
-    void SpawnRabbit (float x, float y, float z)
+    public void SpawnRabbit (float x, float y, float z)
     {
         SpawnRabbit(new Vector3(x, y, z));
     }
