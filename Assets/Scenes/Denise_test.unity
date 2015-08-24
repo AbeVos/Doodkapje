@@ -135,7 +135,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 597c7526a11179d4dab4d3e36f54c0b6, type: 2}
+  - {fileID: 2100000, guid: 9659982e161d78c45974bb751b5f98bd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -272,7 +272,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 597c7526a11179d4dab4d3e36f54c0b6, type: 2}
+  - {fileID: 2100000, guid: 9659982e161d78c45974bb751b5f98bd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -502,7 +502,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 597c7526a11179d4dab4d3e36f54c0b6, type: 2}
+  - {fileID: 2100000, guid: 9659982e161d78c45974bb751b5f98bd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1760,7 +1760,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 597c7526a11179d4dab4d3e36f54c0b6, type: 2}
+  - {fileID: 2100000, guid: 9659982e161d78c45974bb751b5f98bd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -3258,6 +3258,10 @@ Prefab:
       propertyPath: m_Name
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 21831852, guid: 6cfe44a31cf77e44b892e5f48d6c0378, type: 2}
+      propertyPath: m_DetailObjectDistance
+      value: 140.300003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cfe44a31cf77e44b892e5f48d6c0378, type: 2}
   m_IsPrefabParent: 0
@@ -4749,7 +4753,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 597c7526a11179d4dab4d3e36f54c0b6, type: 2}
+  - {fileID: 2100000, guid: 9659982e161d78c45974bb751b5f98bd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
