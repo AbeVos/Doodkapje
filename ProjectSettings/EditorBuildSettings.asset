@@ -8,6 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/Mathijs_levelflowTestMap.unity
+    path: Assets/Scenes/Denise_test.unity
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
