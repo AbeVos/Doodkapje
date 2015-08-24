@@ -8,8 +8,8 @@ public class Rabbit : MonoBehaviour
     /*public AudioClip[] gasps;
     public AudioClip[] walks;
     public AudioClip[] whimpers;
-    public AudioClip[] shrieks;
-    public AudioClip[] gore;*/
+    public AudioClip[] shrieks;*/
+    public AudioClip[] gore;
 
     public GameObject[] gibs;
     public Vector3[] gibPositions;
@@ -37,7 +37,7 @@ public class Rabbit : MonoBehaviour
     private NavMeshAgent agent;
     private Vector3 destination;
 
-    //private AudioSource feet;
+    private AudioSource feet;
     //private AudioSource voice;
 
     /*
@@ -83,12 +83,12 @@ public class Rabbit : MonoBehaviour
         /*voice = gameObject.AddComponent<AudioSource>();
         voice.playOnAwake = false;
         voice.pitch = Random.Range(0.85f, 1.25f);
-        voice.spatialBlend = 1;
+        voice.spatialBlend = 1;*/
 
         feet = gameObject.AddComponent<AudioSource>();
         feet.playOnAwake = false;
         feet.pitch = Random.Range(0.85f, 1.15f);
-        feet.spatialBlend = 1;*/
+        feet.spatialBlend = 1;
 
         State = RabbitState.Idle;
     }
@@ -104,10 +104,7 @@ public class Rabbit : MonoBehaviour
         {
             case RabbitState.Idle:
 
-                Ray ray = new Ray(transform.position + Vector3.up * 0.5f, wolfPos - transform.position + Vector3.up * 0.5f);
-                RaycastHit hit = new RaycastHit();
-
-                if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Rabbit is niet bang voor de grote boze wolf als die niet te zien is
+                if (_distance <= fleeRadius) //  Dat konijn ook: ziet hij je niet van voren, dan hoort hij je wel met zijn oren.
                 {
                     State = RabbitState.Startled;
 
@@ -164,19 +161,18 @@ public class Rabbit : MonoBehaviour
                     GetComponent<Collider>().enabled = false;
                     GetComponent<NavMeshAgent>().enabled = false;
 
-                    manager.Kapjes++; //meerkapjes :)
+                    manager.BloodLevel += 2;
 
                     for (int i = 0; i < gibs.Length; i++)
                     {
                         GameObject g = (GameObject)Instantiate(gibs[i], gibPositions[i] + transform.position, transform.rotation);
-                        //g.GetComponent<Rigidbody>().AddExplosionForce(1, transform.position, 5, 1, ForceMode.Impulse);
                     }
 
                     /*voice.clip = shrieks[Random.Range(0, shrieks.Length)];
-                    voice.Play();
+                    voice.Play();*/
 
                     feet.clip = gore[Random.Range(0, gore.Length)];
-                    feet.Play();*/
+                    feet.Play();
 
                     Instantiate(roodKwakje, transform.position, Quaternion.identity);   //  Want mathijs wilde meer impact voor een ontploffende roodkap
 
