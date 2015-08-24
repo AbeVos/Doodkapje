@@ -2,24 +2,29 @@
 
 public class MouseRotate : MonoBehaviour
 {
-    private float angle;
+    public float extarMouse, deadZone;
+    private float angleX, angleY;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        angle = 0;
+        angleX = 0;
+        angleY = 35;
     }
 
     void Update()
     {
-        angle += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1);
+        angleX += Input.GetAxis("Mouse X") * extarMouse;
+        angleY -= Input.GetAxis("Mouse Y") / 1.2f;
 
-        angle = Mathf.Clamp(angle, -40, 40);
-        //angle = Mathf.Lerp(angle, 0, 0.01f);
-        angle = Mathf.Lerp(angle, 0, Time.deltaTime);
+        angleX = Mathf.Clamp(angleX, -40, 40);
+        angleY = Mathf.Clamp(angleY, -20, 55);
 
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, angle, transform.localEulerAngles.z);
+        angleX = Mathf.Lerp(angleX, 0.2f, Time.deltaTime);
+        angleY = Mathf.Lerp(angleY, 35f, Time.deltaTime * 1.5f);
+
+        transform.localEulerAngles = new Vector3(angleY, angleX, transform.localEulerAngles.z);
 
     }
 }
