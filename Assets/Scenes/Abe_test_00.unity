@@ -468,6 +468,18 @@ Prefab:
       propertyPath: movementSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 13545436, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13545436, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138848, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_TagString
+      value: Wolf
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
   m_IsPrefabParent: 0
