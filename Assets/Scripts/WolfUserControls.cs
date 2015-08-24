@@ -21,8 +21,10 @@ public class WolfUserControls : MonoBehaviour
         v = Mathf.Clamp(v, -.5f, 1);
 
         Vector2 dir = new Vector2(h / 3, v);
-        WolfCharacter.move(dir, s);
+        WolfCharacter.move(dir);
         WolfCharacter.Rotate();
+
+        if (s) WolfCharacter.Sprint();
 
         if (Input.GetMouseButtonDown(0))
         {
