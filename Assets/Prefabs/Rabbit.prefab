@@ -74,8 +74,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169ff2bfd4102184bbda5a20f7536cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gibs: []
-  gibPositions: []
+  gore:
+  - {fileID: 8300000, guid: 3a269f8369a6da548af6154e0e2033f5, type: 3}
+  gibs:
+  - {fileID: 171646, guid: fe307ce685aed614ab077929bef46222, type: 2}
+  gibPositions:
+  - {x: 0, y: 0, z: 0}
   roodKwakje: {fileID: 117624, guid: f702f348a8f8b664f8c2705a142a6e8e, type: 2}
 --- !u!136 &13626968
 CapsuleCollider:
@@ -102,7 +106,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: .5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -118,6 +122,18 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: gore.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gibs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gibPositions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -125,6 +141,18 @@ Prefab:
       propertyPath: roodKwakje
       value: 
       objectReference: {fileID: 117624, guid: f702f348a8f8b664f8c2705a142a6e8e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_StoppingDistance
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gore.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a269f8369a6da548af6154e0e2033f5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: gibs.Array.data[0]
+      value: 
+      objectReference: {fileID: 171646, guid: fe307ce685aed614ab077929bef46222, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180094}
