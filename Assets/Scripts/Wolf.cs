@@ -9,6 +9,7 @@ public class Wolf : MonoBehaviour
     public float movementSpeed, sprintFactor, RotationSpeed;
     public Animator anim;
     public Image SprintBar;
+    public SphereCollider sc;
 
     private Camera cam;
     private VignetteAndChromaticAberration vaca;
@@ -137,7 +138,9 @@ public class Wolf : MonoBehaviour
 
     public void PrimaryAttack()
     {
-        Debug.Log("Primary Attack");
+        sc.enabled = true;
+        anim.SetTrigger("Attack");
+        sc.enabled = false;
     }
 
     public void SecondaryAttack()
