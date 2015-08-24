@@ -85,9 +85,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420472}
+  - 135: {fileID: 13545436}
   m_Layer: 0
   m_Name: joint8
-  m_TagString: Untagged
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +274,7 @@ GameObject:
   - 114: {fileID: 11481772}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Wolf
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1534,6 +1535,7 @@ MonoBehaviour:
   RotationSpeed: 10
   anim: {fileID: 9579988}
   SprintBar: {fileID: 11473598}
+  sc: {fileID: 13545436}
 --- !u!124 &12454184
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1541,6 +1543,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155538}
   m_Enabled: 1
+--- !u!135 &13545436
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13788266
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
