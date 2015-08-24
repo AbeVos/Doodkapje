@@ -77,12 +77,9 @@ public class Spawner : MonoBehaviour
 
             case Type.Konijn:
 
-                Gizmos.DrawWireSphere(transform.position + Vector3.up / 2, 1 / 2);
+                Gizmos.DrawWireSphere(transform.position + Vector3.up / 2, 0.5f);
 
                 break;
         }
-
-        Gizmos.DrawWireSphere(cam.transform.position, spawnDistance);
-        Gizmos.DrawWireSphere(cam.transform.position, spawnDistance + margin);
     }
 }
