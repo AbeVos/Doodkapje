@@ -8,7 +8,8 @@ public class RoodkapjeManager : MonoBehaviour
     public float safeRadius = 30;
     public float bloodDifficulty = 1.5f;
 
-    public GameObject prefab;
+    public GameObject roodkapje;
+    public GameObject rabbit;
 
     public AudioClip musicCreepy;
     public AudioClip musicHappy;
@@ -17,8 +18,11 @@ public class RoodkapjeManager : MonoBehaviour
 
     private Wolf wolf;
 
-    private List<GameObject> inUse;
-    private List<GameObject> available;
+    private List<GameObject> inUseRoodkapje;
+    private List<GameObject> availableRoodkapje;
+
+    private List<GameObject> inUseRabbit;
+    private List<GameObject> availableRabbit;
 
     private float _blood;
     public float BloodLevel
@@ -47,14 +51,24 @@ public class RoodkapjeManager : MonoBehaviour
         get { return _kapjes; }
     }
 
-    void Start()
+    void Start ()
     {
-        inUse = new List<GameObject>();
-        available = new List<GameObject>(10);
+        //  Spawn Roodkapjes
+        inUseRoodkapje = new List<GameObject>();
+        availableRoodkapje = new List<GameObject>(10);
 
         for (int i = 0; i < 10; i++)
         {
-            Spawn(Random.Range(-30, 30), 0, Random.Range(-30, 30));
+            SpawnRoodkapje(Random.Range(-30, 30), 0, Random.Range(-30, 30));
+        }
+
+        //  Sapwn Rabbits
+        inUseRabbit = new List<GameObject>();
+        availableRabbit = new List<GameObject>(10);
+
+        for (int i = 0; i < 10; i++)
+        {
+            SpawnRabbit(Random.Range(-30, 30), 0, Random.Range(-30, 30));
         }
 
         music = gameObject.AddComponent<AudioSource>();
@@ -66,21 +80,25 @@ public class RoodkapjeManager : MonoBehaviour
         _blood = 100;
     }
 
-    void Update()
+    void Update ()
     {
+        /*
+         *  Roodkapje
+         */
+
         bool roodkaploos = true;    //  Blijft true zolang er geen Roodkappen in de buurt zijn
 
-        for (int i = 0; i < inUse.Count; i++)   //  Clean inUse List
+        for (int i = 0; i < inUseRoodkapje.Count; i++)   //  Update Roodkapje pool
         {
             //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Roodkapjes, wat een leuke aangelegenheid
-            inUse[i].GetComponent<Roodkapje>().SetRunningSpeed(Kapjes / 15 + 5);
+            inUseRoodkapje[i].GetComponent<Roodkapje>().SetRunningSpeed(Kapjes / 15 + 5);
 
-            if (inUse[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
+            if (inUseRoodkapje[i].GetComponent<Roodkapje>().State == Roodkapje.RoodkapjeState.Destroy)
             {
-                available.Add(inUse[i]);
-                inUse.RemoveAt(i);
+                availableRoodkapje.Add(inUseRoodkapje[i]);
+                inUseRoodkapje.RemoveAt(i);
             }
-            else if (roodkaploos && inUse[i].GetComponent<Roodkapje>().Distance < safeRadius)
+            else if (roodkaploos && inUseRoodkapje[i].GetComponent<Roodkapje>().Distance < safeRadius)
             {
                 PlayHappyMusic();
 
@@ -90,19 +108,35 @@ public class RoodkapjeManager : MonoBehaviour
 
         if (roodkaploos) PlayCreepyMusic();
 
+        /*
+         *  Rabbit
+         */
+         
+        for (int i = 0; i < inUseRabbit.Count; i++)   //  Update Rabbit pool
+        {
+            //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Konijnen, wat een leuke aangelegenheid
+            //inUseRabbit[i].GetComponent<Rabbit>().SetRunningSpeed(Kapjes / 15 + 5);
+
+            if (inUseRabbit[i].GetComponent<Rabbit>().State == Rabbit.RabbitState.Destroy)
+            {
+                availableRabbit.Add(inUseRabbit[i]);
+                inUseRabbit.RemoveAt(i);
+            }
+        }
+
 #if UNITY_EDITOR 
         //  Debug/test info
 
         if (Input.GetKey(KeyCode.Space))
         {
-            print("In use: " + inUse.Count + ", Available: " + available.Count);
+            print("In use: " + inUseRoodkapje.Count + ", Available: " + availableRoodkapje.Count);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
             for (int i = 0; i < 10; i++)
             {
-                Spawn(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
+                SpawnRoodkapje(wolf.transform.position + new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30)));
             }
         }
 #endif
@@ -120,7 +154,7 @@ public class RoodkapjeManager : MonoBehaviour
      *  Custom Functions
      */
 
-    void SaveKapjes()
+    void SaveKapjes ()
     {
         try
         {
@@ -137,31 +171,55 @@ public class RoodkapjeManager : MonoBehaviour
     }
 
 
-    void Spawn(Vector3 pos)
+    void SpawnRoodkapje (Vector3 pos)
     {
-        if (available.Count > 0)
+        if (availableRoodkapje.Count > 0)
         {
-            GameObject r = available[available.Count - 1];
+            GameObject r = availableRoodkapje[availableRoodkapje.Count - 1];
             r.GetComponent<Roodkapje>().Init(this, pos, Quaternion.identity);
 
-            inUse.Add(r);
-            available.Remove(r);
+            inUseRoodkapje.Add(r);
+            availableRoodkapje.Remove(r);
         }
         else
         {
-            GameObject r = Instantiate(prefab);
+            GameObject r = Instantiate(roodkapje);
             r.GetComponent<Roodkapje>().Init(this, pos, Quaternion.identity);
 
-            inUse.Add(r);
+            inUseRoodkapje.Add(r);
         }
     }
 
-    void Spawn(float x, float y, float z)
+    void SpawnRoodkapje (float x, float y, float z)
     {
-        Spawn(new Vector3(x, y, z));
+        SpawnRoodkapje(new Vector3(x, y, z));
     }
 
-    public void PlayHappyMusic()
+    void SpawnRabbit (Vector3 pos)
+    {
+        if (availableRabbit.Count > 0)
+        {
+            GameObject r = availableRabbit[availableRabbit.Count - 1];
+            r.GetComponent<Rabbit>().Init(this, pos, Quaternion.identity);
+
+            inUseRabbit.Add(r);
+            availableRabbit.Remove(r);
+        }
+        else
+        {
+            GameObject r = Instantiate(rabbit);
+            r.GetComponent<Rabbit>().Init(this, pos, Quaternion.identity);
+
+            inUseRabbit.Add(r);
+        }
+    }
+
+    void SpawnRabbit (float x, float y, float z)
+    {
+        SpawnRabbit(new Vector3(x, y, z));
+    }
+
+    public void PlayHappyMusic ()
     {
         if (music.clip != musicHappy)
         {
@@ -171,7 +229,7 @@ public class RoodkapjeManager : MonoBehaviour
         }
     }
 
-    public void PlayCreepyMusic()
+    public void PlayCreepyMusic ()
     {
         if (music.clip != musicCreepy)
         {
