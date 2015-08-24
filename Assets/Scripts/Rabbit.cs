@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[AddComponentMenu("Roodkapje/Rabbit")]
+[AddComponentMenu("Rabbit/Rabbit")]
 public class Rabbit : MonoBehaviour
 {
     //  Geluiden komen nog wel
@@ -44,17 +44,17 @@ public class Rabbit : MonoBehaviour
      *  State Machine
      */
 
-    public enum RoodkapjeState
+    public enum RabbitState
     {
-        Idle,       //  Nietsvermoedend is Roodkapje bezig bloemen te plukken/een liedje te fluiten/een bolis te boetseren/...
-        Startled,   //  De verschijning van de wolf doet Roodkapje opschrikken
-        Flee,       //  Roodkapje rent weg van de wolf
-        Dead,       //  Roodkapje wordt verslonden door de wolf
-        Destroy     //  De dode Roodkapje wordt netjes opgeveegd
+        Idle,       //  Nietsvermoedend is Rabbit bezig bloemen te plukken/een liedje te fluiten/een bolis te boetseren/...
+        Startled,   //  De verschijning van de wolf doet Rabbit opschrikken
+        Flee,       //  Rabbit rent weg van de wolf
+        Dead,       //  Rabbit wordt verslonden door de wolf
+        Destroy     //  De dode Rabbit wordt netjes opgeveegd
     }
 
-    private RoodkapjeState state;
-    public RoodkapjeState State
+    private RabbitState state;
+    public RabbitState State
     {
         get
         {
@@ -90,7 +90,7 @@ public class Rabbit : MonoBehaviour
         feet.pitch = Random.Range(0.85f, 1.15f);
         feet.spatialBlend = 1;*/
 
-        State = RoodkapjeState.Idle;
+        State = RabbitState.Idle;
     }
 
     void Update()
@@ -102,14 +102,14 @@ public class Rabbit : MonoBehaviour
 
         switch (State)
         {
-            case RoodkapjeState.Idle:
+            case RabbitState.Idle:
 
                 Ray ray = new Ray(transform.position + Vector3.up * 0.5f, wolfPos - transform.position + Vector3.up * 0.5f);
                 RaycastHit hit = new RaycastHit();
 
-                if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Roodkapje is niet bang voor de grote boze wolf als die niet te zien is
+                if (_distance <= fleeRadius && Physics.Raycast(ray, out hit) && hit.transform.tag == "Wolf") //  Rabbit is niet bang voor de grote boze wolf als die niet te zien is
                 {
-                    State = RoodkapjeState.Startled;
+                    State = RabbitState.Startled;
 
                     //voice.PlayOneShot(gasps[Random.Range(0, gasps.Length)], 1.5f);
                 }
@@ -120,11 +120,11 @@ public class Rabbit : MonoBehaviour
 
                 break;
 
-            case RoodkapjeState.Startled:
+            case RabbitState.Startled:
 
                 if (tState >= startleTime)
                 {
-                    State = RoodkapjeState.Flee;
+                    State = RabbitState.Flee;
 
                     //voice.clip = whimpers[Random.Range(0, whimpers.Length)];
                     //voice.Play();
@@ -132,7 +132,7 @@ public class Rabbit : MonoBehaviour
 
                 break;
 
-            case RoodkapjeState.Flee:
+            case RabbitState.Flee:
 
                 agent.SetDestination(transform.position + (transform.position - wolfPos) / _distance * safeRadius);
 
@@ -140,7 +140,7 @@ public class Rabbit : MonoBehaviour
                 {
                     agent.SetDestination(transform.position);
 
-                    State = RoodkapjeState.Idle;
+                    State = RabbitState.Idle;
                 }
 
                 /*if (!feet.isPlaying)
@@ -157,7 +157,7 @@ public class Rabbit : MonoBehaviour
 
                 break;
 
-            case RoodkapjeState.Dead:
+            case RabbitState.Dead:
                 if (tState == 0)
                 {
                     GetComponentInChildren<Renderer>().enabled = false;
@@ -183,11 +183,11 @@ public class Rabbit : MonoBehaviour
                 }
 
                 //if (!voice.isPlaying)
-                    State = RoodkapjeState.Destroy;
+                    State = RabbitState.Destroy;
 
                 break;
 
-            case RoodkapjeState.Destroy:
+            case RabbitState.Destroy:
 
                 break;
         }
@@ -197,10 +197,10 @@ public class Rabbit : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (State != RoodkapjeState.Destroy && col.transform.tag == "Wolf")
+        if (State != RabbitState.Destroy && col.transform.tag == "Wolf")
         {
             print(transform.name + " was mauled.");
-            State = RoodkapjeState.Dead;
+            State = RabbitState.Dead;
         }
     }
 
@@ -219,7 +219,7 @@ public class Rabbit : MonoBehaviour
         transform.position = pos;
         transform.rotation = rot;
 
-        State = RoodkapjeState.Idle;
+        State = RabbitState.Idle;
 
         fleeRadius = manager.fleeRadius;
         safeRadius = manager.safeRadius;
