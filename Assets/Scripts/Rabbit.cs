@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
-[AddComponentMenu("Rabbit/Rabbit")]
+[AddComponentMenu("Roodkapje/Rabbit")]
 public class Rabbit : MonoBehaviour
 {
+    public Material[] materials;
+
     //  Geluiden komen nog wel
 
     /*public AudioClip[] gasps;
     public AudioClip[] walks;
     public AudioClip[] whimpers;
     public AudioClip[] shrieks;*/
-    public AudioClip[] gore;
+    public AudioClip[] gore;    //  Dit geluid is er al
 
     public GameObject[] gibs;
     public Vector3[] gibPositions;
@@ -76,6 +78,8 @@ public class Rabbit : MonoBehaviour
 
     void Start()
     {
+        GetComponent<Renderer>().material = materials[Random.Range(0, materials.Length)];
+
         wolf = FindObjectOfType<Wolf>();
 
         agent = GetComponent<NavMeshAgent>();

@@ -90,6 +90,11 @@ public class Roodkapje : MonoBehaviour
         feet.spatialBlend = 1;
 
         State = RoodkapjeState.Idle;
+
+        //  Varieer lengte van Roodkapje
+
+        //transform.FindChild("joint7").transform.lossyScale = 3 * Vector3.up;
+            //transform.up * Random.Range(0.1f, 1.9f);
 	}
 	
 	void Update ()
