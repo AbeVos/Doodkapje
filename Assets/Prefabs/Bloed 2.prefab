@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb341e21a8b64a4b926f7002fd3fddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: .300000012
+  time: 2
 --- !u!198 &19844862
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1160,7 +1160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: time
-      value: .300000012
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
