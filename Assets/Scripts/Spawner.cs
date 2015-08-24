@@ -9,8 +9,9 @@ public class Spawner : MonoBehaviour
     }
     public Type type;
 
+    public float spawnDistance = 30;
     public float margin = 5;
-    public float cooldown = 20;
+    public float cooldown = 60;
 
     private float timer;
 
@@ -43,10 +44,12 @@ public class Spawner : MonoBehaviour
         float dot = Vector3.Dot(dir, pos);
 
         if (timer >= cooldown &&
-            distance < cam.farClipPlane + margin &&
-            distance > cam.farClipPlane &&
-            dot > 0)
+            distance < spawnDistance + margin &&
+            distance > spawnDistance &&
+            dot >= 0)
         {
+            Debug.Log("Spawn");
+
             if (type == Type.Roodkapje)
             {
                 manager.SpawnRoodkapje(transform.position);
@@ -58,7 +61,8 @@ public class Spawner : MonoBehaviour
 
             timer = 0;
         }
-        timer += Time.deltaTime;
+        else
+            timer += Time.deltaTime;
 	}
 
     void OnDrawGizmos()
@@ -77,5 +81,8 @@ public class Spawner : MonoBehaviour
 
                 break;
         }
+
+        Gizmos.DrawWireSphere(cam.transform.position, spawnDistance);
+        Gizmos.DrawWireSphere(cam.transform.position, spawnDistance + margin);
     }
 }
