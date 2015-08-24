@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &29768467
@@ -173,21 +172,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
---- !u!4 &34173855
+--- !u!4 &34173855 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
   m_PrefabInternal: {fileID: 1849724665}
-  m_GameObject: {fileID: 1697081068}
-  m_LocalRotation: {x: 0, y: .5, z: 0, w: .866025388}
-  m_LocalPosition: {x: 218.199997, y: 49.4000015, z: 192.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 775004708}
-  m_RootOrder: 6
 --- !u!1 &40267399
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &138733667
@@ -358,7 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &175236496
@@ -402,7 +390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &184856245
@@ -502,7 +489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &211290451
@@ -615,7 +601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &258867939
@@ -628,6 +613,7 @@ GameObject:
   - 4: {fileID: 258867940}
   - 33: {fileID: 258867943}
   - 23: {fileID: 258867942}
+  - 114: {fileID: 258867941}
   m_Layer: 4
   m_Name: WaterProNighttime 4
   m_TagString: Untagged
@@ -647,6 +633,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 775004708}
   m_RootOrder: 2
+--- !u!114 &258867941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11481352, guid: 15185d315fe41364d801ae327f0fa97d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258867939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d3ef1a5bbfb4e0a910fbbe5830b1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterMode: 2
+  disablePixelLights: 1
+  textureSize: 256
+  clipPlaneOffset: .0700000003
+  reflectLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  refractLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!23 &258867942
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -658,7 +666,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1aaa18253294af947907346076ba4e25, type: 2}
+  - {fileID: 2100000, guid: e633a20421c47426aa04444234225b69, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2182,7 +2190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &475560552
@@ -2226,7 +2233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &493482142 stripped
@@ -2532,7 +2538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &545200800
@@ -2576,7 +2581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &545725757
@@ -2895,7 +2899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &591684407
@@ -3058,7 +3061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &636478913 stripped
@@ -3218,7 +3220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &686634857
@@ -3262,7 +3263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &701220094
@@ -3455,49 +3455,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a55fd9d149b1a1d4a9725d80275b65c8, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &702444484
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 217.100006
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 48.9000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 189.800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: .866025388
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9500000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-  m_ParentPrefab: {fileID: 100100000, guid: 6f4029f36a5c58146844f891af67832e, type: 3}
-  m_IsPrefabParent: 0
 --- !u!1 &713034303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,7 +3484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeRadius: 15
   safeRadius: 30
-  deathRadius: 50
   bloodDifficulty: 1
   roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
   rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
@@ -3586,7 +3542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &736932536
@@ -3630,7 +3585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &756723714
@@ -4971,18 +4925,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 478802, guid: a55fd9d149b1a1d4a9725d80275b65c8, type: 2}
   m_PrefabInternal: {fileID: 1832283065}
---- !u!4 &832580244
+--- !u!4 &832580244 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
   m_PrefabInternal: {fileID: 1992482559}
-  m_GameObject: {fileID: 844082527}
-  m_LocalRotation: {x: 0, y: .751268983, z: 0, w: .659996271}
-  m_LocalPosition: {x: 13.6000004, y: 0, z: 247.199997}
-  m_LocalScale: {x: .849149585, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 775004708}
-  m_RootOrder: 5
 --- !u!1 &844052622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,78 +4970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
---- !u!1 &844082527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
-  m_PrefabInternal: {fileID: 1992482559}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 832580244}
-  - 33: {fileID: 844082530}
-  - 23: {fileID: 844082529}
-  - 95: {fileID: 844082528}
-  m_Layer: 0
-  m_Name: WaterMesh (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!95 &844082528
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1992482559}
-  m_GameObject: {fileID: 844082527}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!23 &844082529
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1992482559}
-  m_GameObject: {fileID: 844082527}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1aaa18253294af947907346076ba4e25, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &844082530
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1992482559}
-  m_GameObject: {fileID: 844082527}
-  m_Mesh: {fileID: 4300000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
 --- !u!4 &856018714 stripped
 Transform:
   m_PrefabParentObject: {fileID: 437920, guid: 5f4aaa4c29a826f4d9aa5e1c311bc8bd, type: 2}
@@ -5240,7 +5116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1062271493
@@ -5366,7 +5241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1092148092
@@ -6924,7 +6798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1216936830
@@ -7014,7 +6887,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1 &1233673101
@@ -7139,7 +7011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &1248001228 stripped
@@ -7433,7 +7304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1475801343
@@ -7593,7 +7463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &1509654749 stripped
@@ -7877,7 +7746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &1578495304 stripped
@@ -9382,75 +9250,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ad3a7b54c776aa488ee8a0f85825fd8, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1697081068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
-  m_PrefabInternal: {fileID: 1849724665}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 34173855}
-  - 33: {fileID: 1697081071}
-  - 23: {fileID: 1697081070}
-  - 95: {fileID: 1697081069}
-  m_Layer: 0
-  m_Name: WaterMesh (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!95 &1697081069
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1849724665}
-  m_GameObject: {fileID: 1697081068}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!23 &1697081070
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1849724665}
-  m_GameObject: {fileID: 1697081068}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1aaa18253294af947907346076ba4e25, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1697081071
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: ba1950a49634bcf4d969c7df2cedebf1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1849724665}
-  m_GameObject: {fileID: 1697081068}
-  m_Mesh: {fileID: 4300000, guid: ba1950a49634bcf4d969c7df2cedebf1, type: 3}
 --- !u!1 &1699028367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9475,7 +9274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699028367}
   m_LocalRotation: {x: .550462604, y: -.458185136, z: -.402955174, w: -.569810927}
-  m_LocalPosition: {x: -138.179993, y: -53.4000015, z: -22.3999996}
+  m_LocalPosition: {x: -128.699997, y: -53.4000015, z: -22.3999996}
   m_LocalScale: {x: 1.35220993, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 191681087}
@@ -10581,6 +10380,7 @@ GameObject:
   - 4: {fileID: 1710290507}
   - 33: {fileID: 1710290510}
   - 23: {fileID: 1710290509}
+  - 114: {fileID: 1710290508}
   m_Layer: 4
   m_Name: WaterProNighttime 5
   m_TagString: Untagged
@@ -10595,11 +10395,33 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710290506}
   m_LocalRotation: {x: 0, y: .553978562, z: 0, w: .832531035}
-  m_LocalPosition: {x: 257.200012, y: -2.5, z: 46.7000008}
+  m_LocalPosition: {x: 257.200012, y: 3.79999995, z: 46.7000008}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 775004708}
   m_RootOrder: 3
+--- !u!114 &1710290508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400320, guid: 15185d315fe41364d801ae327f0fa97d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710290506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d3ef1a5bbfb4e0a910fbbe5830b1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterMode: 2
+  disablePixelLights: 1
+  textureSize: 256
+  clipPlaneOffset: .0700000003
+  reflectLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  refractLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!23 &1710290509
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10611,7 +10433,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1aaa18253294af947907346076ba4e25, type: 2}
+  - {fileID: 2100000, guid: e633a20421c47426aa04444234225b69, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -10952,7 +10774,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1832283065
@@ -13348,7 +13169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1896130369
@@ -13636,7 +13456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!1001 &1992482559
@@ -15990,7 +15809,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  spawnDistance: 30
   margin: 5
   cooldown: 20
 --- !u!4 &2053345946 stripped
