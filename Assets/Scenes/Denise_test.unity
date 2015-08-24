@@ -14,10 +14,10 @@ SceneSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_Fog: 0
-  m_FogColor: {r: .272815734, g: .375605494, b: .426470578, a: 1}
-  m_FogMode: 2
-  m_FogDensity: .100000001
+  m_Fog: 1
+  m_FogColor: {r: .443137258, g: .78039217, b: .764705896, a: .0588235296}
+  m_FogMode: 3
+  m_FogDensity: .0199999996
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
@@ -1845,7 +1845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &547700607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,9 +1925,9 @@ Transform:
   m_PrefabParentObject: {fileID: 496412, guid: 15185d315fe41364d801ae327f0fa97d, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 547700607}
-  m_LocalRotation: {x: 0, y: .0972885862, z: 0, w: .995256186}
-  m_LocalPosition: {x: 104.800003, y: 10.6999998, z: 227.5}
-  m_LocalScale: {x: 12.8251381, y: 1.09519148, z: 5.64480543}
+  m_LocalRotation: {x: 0, y: .789241731, z: 0, w: .614082694}
+  m_LocalPosition: {x: 96.1999969, y: 10.1999998, z: 229.199997}
+  m_LocalScale: {x: 3.81821203, y: 1.09519148, z: 10.644578}
   m_Children: []
   m_Father: {fileID: 775004708}
   m_RootOrder: 4
@@ -1958,11 +1958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ed4e282b390654699460317e09d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fleeRadius: 10
+  fleeRadius: 15
   safeRadius: 30
-  bloodDifficulty: 1.5
-  roodkapje: {fileID: 0}
-  rabbit: {fileID: 0}
+  bloodDifficulty: 1
+  roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
+  rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
   musicCreepy: {fileID: 8300000, guid: e77beac9e1613f54b89ef6505246004f, type: 3}
   musicHappy: {fileID: 8300000, guid: f4486896dbd62924b9b7af02a867d126, type: 3}
 --- !u!4 &713034305
@@ -1976,7 +1976,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &756723714
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,23 +4685,67 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22428458, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .258871138
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22428458, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .965911865
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22428458, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.67002869
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22428458, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 2.56890655
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441546, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: far clip plane
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: .544117689
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: .544117689
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064802, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: .544117689
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408886, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: intensity
+      value: 4.17999983
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033464, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033464, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: .443137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033464, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: .78039217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033464, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: .764705896
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033464, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: m_BackGroundColor.a
+      value: .0588235296
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
