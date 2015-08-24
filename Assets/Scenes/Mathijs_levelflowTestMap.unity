@@ -190,8 +190,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeRadius: 15
   safeRadius: 30
-  bloodDifficulty: .0599999987
-  prefab: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
+  bloodDifficulty: 1
+  roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
+  rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
   musicCreepy: {fileID: 8300000, guid: e77beac9e1613f54b89ef6505246004f, type: 3}
   musicHappy: {fileID: 8300000, guid: f4486896dbd62924b9b7af02a867d126, type: 3}
 --- !u!4 &227135675
@@ -1006,6 +1007,22 @@ Prefab:
     - target: {fileID: 11400356, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
       propertyPath: m_FillAmount
       value: .425000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414892, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: sprintFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414892, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: RotationSpeed
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466576, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: extarMouse
+      value: 1.10000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466576, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
+      propertyPath: deadZone
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f262d8dba696044ca14c238f69d7f38, type: 2}
