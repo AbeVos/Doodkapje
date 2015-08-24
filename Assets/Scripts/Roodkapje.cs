@@ -3,6 +3,7 @@
 [AddComponentMenu("Roodkapje/Roodkapje")]
 public class Roodkapje : MonoBehaviour
 {
+    public AudioClip[] speech;
     public AudioClip[] gasps;
     public AudioClip[] walks;
     public AudioClip[] whimpers;
@@ -123,6 +124,12 @@ public class Roodkapje : MonoBehaviour
                 else if (tState >= Random.Range(2, 4))
                 {
                     agent.SetDestination(transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5)));
+                }
+
+                if (tState >= Random.Range(5, 15))
+                {
+                    voice.PlayOneShot(speech[Random.Range(0, gasps.Length)], 1.5f);
+                    tState = 0;
                 }
 
                 break;
