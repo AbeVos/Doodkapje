@@ -102,7 +102,110 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TailRight
+      takeName: TailRight
+      firstFrame: 31
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Base
+        weight: 1
+      - path: Root/Base/joint9
+        weight: 1
+      - path: Root/Base/joint9/joint10
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12/joint13
+        weight: 1
+      - path: Root/Base/joint9/joint10/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: Root/Base/L_bovenbeen
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel/L_voet
+        weight: 1
+      - path: Root/Base/L_bovenbeen/L_onderbeen/L_hiel/L_voet/joint19
+        weight: 1
+      - path: Root/Base/R_bovenbeen
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel/R_voet
+        weight: 1
+      - path: Root/Base/R_bovenbeen/R_onderbeen/R_hiel/R_voet/joint19 1
+        weight: 1
+      - path: Root/Base/rug1
+        weight: 1
+      - path: Root/Base/rug1/rug2
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols/L_hand
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/L_schouder/L_bovenarm/L_elleboog/L_pols/L_hand/joint25
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek/kop
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/nek/kop/joint8
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols/R_hand
+        weight: 1
+      - path: Root/Base/rug1/rug2/rug3/schoft/R_schouder/R_bovenarm/R_elleboog/R_pols/R_hand/joint25
+          1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

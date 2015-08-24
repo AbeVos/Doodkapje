@@ -18,10 +18,13 @@ public class WolfUserControls : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         bool s = Input.GetKey(KeyCode.LeftShift);
+        v = Mathf.Clamp(v, -.5f, 1);
 
-        Vector2 dir = new Vector2(h, v);
-        WolfCharacter.move(dir, s);
+        Vector2 dir = new Vector2(h / 3, v);
+        WolfCharacter.move(dir);
         WolfCharacter.Rotate();
+
+        if (s) WolfCharacter.Sprint();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -31,8 +34,6 @@ public class WolfUserControls : MonoBehaviour
         {
             WolfCharacter.SecondaryAttack();
         }
-        // CamRot = CamRotNew;
-        // Debug.Log(Vector3.Angle(CamRotNew, CamRot)); 
     }
 
 }
