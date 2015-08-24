@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: bloemroodkapje6
+  m_Name: bloemroodkapjeSteel
   m_Shader: {fileID: 4800000, guid: 273afd709044f2a4a9147d6c795cf420, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
