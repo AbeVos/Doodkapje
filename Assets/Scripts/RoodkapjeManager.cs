@@ -74,7 +74,7 @@ public class RoodkapjeManager : MonoBehaviour
 
         music = gameObject.AddComponent<AudioSource>();
         music.loop = true;
-        PlayCreepyMusic();
+        PlayHappyMusic();
 
         wolf = FindObjectOfType<Wolf>();
 
@@ -87,8 +87,6 @@ public class RoodkapjeManager : MonoBehaviour
          *  Roodkapje
          */
 
-        bool roodkaploos = true;    //  Blijft true zolang er geen Roodkappen in de buurt zijn
-
         for (int i = 0; i < inUseRoodkapje.Count; i++)   //  Update Roodkapje pool
         {
             //  Pas rensnelheid aan aan het aantal aan stukken gescheurde Roodkapjes, wat een leuke aangelegenheid
@@ -99,15 +97,7 @@ public class RoodkapjeManager : MonoBehaviour
                 availableRoodkapje.Add(inUseRoodkapje[i]);
                 inUseRoodkapje.RemoveAt(i);
             }
-            else if (roodkaploos && inUseRoodkapje[i].GetComponent<Roodkapje>().Distance < safeRadius)
-            {
-                PlayHappyMusic();
-
-                roodkaploos = false;
-            }
         }
-
-        if (roodkaploos) PlayCreepyMusic();
 
         /*
          *  Rabbit
