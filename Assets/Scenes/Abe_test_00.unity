@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleeRadius: 15
   safeRadius: 30
+  deathRadius: 50
   bloodDifficulty: 1
   roodkapje: {fileID: 117260, guid: c037d67709971254993c11164b65aecb, type: 2}
   rabbit: {fileID: 180094, guid: a2c439340fa571f42b60784aef33571e, type: 2}
@@ -743,6 +744,10 @@ Prefab:
     - target: {fileID: 11497634, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
       propertyPath: cooldown
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497634, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 262706ec8c930da47a3cb4d2c8ddeb39, type: 2}
