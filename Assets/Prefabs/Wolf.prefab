@@ -274,7 +274,7 @@ GameObject:
   - 114: {fileID: 11481772}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Player
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,8 +850,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .460000008, y: 8.42000008, z: -9.86999989}
+  m_LocalRotation: {x: 0, y: -.912099481, z: 0, w: .409969002}
+  m_LocalPosition: {x: 209.899994, y: 55.6699982, z: 178.699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22467990}
@@ -1256,8 +1256,8 @@ Camera:
   m_GameObject: {fileID: 155538}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .443137258, g: .78039217, b: .764705896, a: .0588235296}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1265,7 +1265,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: .300000012
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 80
   orthographic: 0
   orthographic size: 5
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 3
+  intensity: 4.17999983
   chromaticAberration: 1
   axialAberration: .5
   blur: .699999988
@@ -1550,7 +1550,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 50
@@ -1763,7 +1763,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Wolf
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138848}

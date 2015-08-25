@@ -122,7 +122,7 @@ public class Wolf : MonoBehaviour
     private void Update()
     {
         SprintBar.fillAmount = SprintMeterTimer;
-        if (sc.enabled) enabled = false;
+        //if (sc.enabled) enabled = false;
     }
 
     public void Rotate()
@@ -139,8 +139,8 @@ public class Wolf : MonoBehaviour
 
     public void PrimaryAttack()
     {
-        sc.enabled = true;
-        anim.SetTrigger("Attack");
+        //sc.enabled = true;
+        //anim.SetTrigger("Attack");
         //sc.enabled = false;
     }
 
